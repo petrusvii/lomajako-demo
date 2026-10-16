@@ -1,0 +1,1955 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Lomajako</title>
+<meta name="description" content="Reilu kesälomajako vuorotyöhön: toiveet, lomapaikat ja vuorottelu vuodesta toiseen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%231c6ec0'/%3E%3Ccircle cx='25' cy='15' r='6.5' fill='%23f6b531'/%3E%3Cpath d='M7 26c3 0 3-2.2 6.5-2.2S17 26 20 26s3.5-2.2 6.5-2.2S30 26 33 26' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f3f5f8; --surface:#ffffff; --surface-2:#f0f3f6; --surface-3:#e5e9ee; --border:#e0e5eb; --border-strong:#c9d0d9;
+  --text:#15202b; --muted:#5b6876; --faint:#8a96a3;
+  --accent:#1c6ec0; --accent-hover:#155ca3; --accent-soft:#e7f0fb; --accent-ink:#0f4f8f; --on-accent:#ffffff;
+  --sun:#f2a91c; --sun-soft:#fff4dc;
+  --danger:#c2382c; --danger-soft:#fdecea; --warn:#8c5300; --warn-soft:#fff2d9; --ok:#1b7a43; --ok-soft:#e3f5ea; --info-soft:#eaf3fc;
+  --l1:#1f9d5a; --l2:#7cc56f; --l3:#e8c13e; --l4:#f0903c; --l5:#be3a2f; --l0:#8d97a5;
+  --radius:14px; --shadow:0 1px 2px rgba(16,24,40,.05),0 2px 8px rgba(16,24,40,.04); --shadow-lg:0 14px 36px rgba(16,24,40,.16);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#11151a; --surface:#181d23; --surface-2:#20262e; --surface-3:#2a313a; --border:#2a313a; --border-strong:#3e4753;
+    --text:#e6eaef; --muted:#9ba6b3; --faint:#6f7b88;
+    --accent:#64a8ee; --accent-hover:#86bcf3; --accent-soft:#1a2a3e; --accent-ink:#a3cbf5; --on-accent:#0b1522;
+    --sun:#f6b531; --sun-soft:#33280f;
+    --danger:#ff8a7d; --danger-soft:#3a1d1b; --warn:#f2b55c; --warn-soft:#33270f; --ok:#5fd28c; --ok-soft:#14301f; --info-soft:#172739;
+    --shadow:none; --shadow-lg:0 14px 36px rgba(0,0,0,.5); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#11151a; --surface:#181d23; --surface-2:#20262e; --surface-3:#2a313a; --border:#2a313a; --border-strong:#3e4753;
+  --text:#e6eaef; --muted:#9ba6b3; --faint:#6f7b88;
+  --accent:#64a8ee; --accent-hover:#86bcf3; --accent-soft:#1a2a3e; --accent-ink:#a3cbf5; --on-accent:#0b1522;
+  --sun:#f6b531; --sun-soft:#33280f;
+  --danger:#ff8a7d; --danger-soft:#3a1d1b; --warn:#f2b55c; --warn-soft:#33270f; --ok:#5fd28c; --ok-soft:#14301f; --info-soft:#172739;
+  --shadow:none; --shadow-lg:0 14px 36px rgba(0,0,0,.5); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--text);font:14.5px/1.55 system-ui,-apple-system,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+h1,h2,h3,h4{line-height:1.25;letter-spacing:-.01em}
+h2{font-size:22px;margin:0 0 4px;font-weight:750}
+h3{font-size:16px;margin:0 0 10px;font-weight:650;display:flex;align-items:center;gap:8px}
+h3>.i{color:var(--accent);width:18px;height:18px}
+p{margin:0 0 10px}
+a{color:var(--accent)}
+.muted{color:var(--muted)} .small{font-size:12.5px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-3px}
+.i.lock{width:13px;height:13px;color:var(--accent);vertical-align:-2px}
+.hide-sm{display:inline}
+@media (max-width:640px){.hide-sm{display:none}}
+
+/* Yläpalkki ja vaiheet */
+.topbar{background:color-mix(in srgb,var(--surface) 90%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:30}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:12px;padding-bottom:4px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:38px;height:38px;flex:none;display:block}
+h1{font-size:18px;margin:0;font-weight:800;letter-spacing:-.02em}
+.sub{color:var(--muted);font-size:12.5px}
+.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.year-field{display:flex;align-items:center;gap:8px;font-weight:600;font-size:13px;color:var(--muted)}
+.year-field input{width:84px;font-weight:700;color:var(--text)}
+.save-status{display:inline-flex;align-items:center;gap:5px;color:var(--muted);font-size:12px;margin-right:4px}
+.save-status .i{color:var(--ok);width:14px;height:14px}
+@media (max-width:760px){.save-status{display:none}}
+@media (max-width:520px){.sub{display:none}}
+.steps{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:6px;padding-bottom:10px}
+.steps::-webkit-scrollbar{display:none}
+.step{display:flex;align-items:center;gap:10px;padding:7px 12px 7px 7px;border-radius:12px;border:1px solid transparent;background:none;cursor:pointer;text-align:left;font:inherit;color:var(--muted);white-space:nowrap;flex:none}
+.step:hover{background:var(--surface-2)}
+.step .ic{position:relative;width:32px;height:32px;border-radius:10px;background:var(--surface-2);color:var(--muted);display:grid;place-items:center;flex:none}
+.step .ic .i{width:17px;height:17px}
+.step .t{display:block;font-weight:650;color:var(--text);font-size:13.5px;line-height:1.25}
+.step .s{display:block;font-size:11.5px;line-height:1.3}
+.step.active{background:var(--accent-soft);border-color:color-mix(in srgb,var(--accent) 25%,transparent)}
+.step.active .ic{background:var(--accent);color:var(--on-accent)}
+.step.active .t{color:var(--accent-ink)}
+.step.done .ic::after{content:"";position:absolute;right:-4px;bottom:-4px;width:15px;height:15px;border-radius:50%;background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/9px no-repeat;border:2px solid var(--surface)}
+.step.warn .s{color:var(--warn);font-weight:600}
+.steps .arrow{color:var(--border-strong);display:grid;place-items:center;flex:none}
+.steps .grow{flex:1;min-width:8px}
+@media (max-width:860px){.step .s{display:none}.steps .arrow{display:none}.step{padding:5px 10px 5px 5px}.step .ic{width:28px;height:28px}}
+main{padding:24px 0 72px}
+.tab{display:none}
+.tab.active{display:block;animation:fade .18s ease}
+@keyframes fade{from{transform:translateY(6px)}to{transform:none}}
+@media (prefers-reduced-motion: reduce){.tab.active{animation:none}}
+
+/* Peruskomponentit */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin-bottom:16px}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:8px 12px;flex-wrap:wrap;margin-bottom:8px}
+.card-head h3{margin:0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 16px;flex-wrap:wrap;margin-bottom:18px}
+.section-head p{max-width:720px;margin:0}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.grid-2,.grid-wide{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start;margin-bottom:16px}
+.grid-wide{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}
+.grid-2>.card,.grid-wide>.card{margin-bottom:0}
+@media (max-width:900px){.grid-2,.grid-wide{grid-template-columns:minmax(0,1fr)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);padding:8px 14px;border-radius:10px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;line-height:1.2;text-decoration:none;transition:background .12s,border-color .12s;white-space:nowrap}
+.btn:hover{background:var(--surface-2)}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent);box-shadow:0 1px 2px rgba(16,24,40,.14)}
+.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn.lg{padding:11px 18px;font-size:15px;border-radius:12px}
+.btn.sm{padding:5px 10px;font-size:13px;border-radius:8px}
+.btn.danger-ghost{color:var(--danger);border-color:transparent;background:none}
+.btn.danger-ghost:hover{background:var(--danger-soft)}
+.btn.primary.danger{background:var(--danger);border-color:var(--danger);color:#fff}
+.icon-btn{display:inline-grid;place-items:center;border:0;background:none;color:var(--muted);cursor:pointer;width:34px;height:34px;border-radius:9px;flex:none;padding:0}
+.icon-btn:hover{background:var(--surface-2);color:var(--text)}
+.icon-btn.del:hover{background:var(--danger-soft);color:var(--danger)}
+input,select,textarea{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--border-strong);border-radius:9px;padding:7px 10px;transition:border-color .12s,box-shadow .12s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+input[type=checkbox]{accent-color:var(--accent)}
+select{cursor:pointer}
+textarea{width:100%;font-family:ui-monospace,Consolas,monospace;font-size:13px}
+.field{display:block;margin-bottom:16px}
+.field>span{display:flex;align-items:center;gap:4px;font-weight:600;margin-bottom:6px;font-size:13.5px}
+.field small{display:block;color:var(--muted);margin-top:5px;font-size:12.5px;line-height:1.45}
+.fields-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.fields-2 select{width:100%}
+.switch{display:flex;align-items:flex-start;gap:12px;cursor:pointer}
+.switch input{appearance:none;-webkit-appearance:none;width:40px;height:23px;border-radius:12px;background:var(--surface-3);border:1px solid var(--border-strong);position:relative;flex:none;cursor:pointer;margin:1px 0 0;padding:0;transition:background .15s}
+.switch input::after{content:"";position:absolute;top:2px;left:2px;width:17px;height:17px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.3);transition:transform .15s}
+.switch input:checked{background:var(--accent);border-color:var(--accent)}
+.switch input:checked::after{transform:translateX(17px)}
+.switch b{display:block;font-weight:600;font-size:13.5px}
+.switch small{display:block;color:var(--muted);font-size:12.5px}
+.stepper{display:inline-flex;align-items:stretch;border:1px solid var(--border-strong);border-radius:10px;overflow:hidden;background:var(--surface);vertical-align:middle}
+.stepper button{border:0;background:var(--surface-2);color:var(--text);width:30px;font-size:17px;line-height:1;cursor:pointer;font-weight:600;padding:0}
+.stepper button:hover{background:var(--surface-3)}
+.stepper input{border:0;border-radius:0;width:44px;text-align:center;font-weight:700;padding:6px 2px;-moz-appearance:textfield;appearance:textfield;background:var(--surface)}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stepper input:focus{box-shadow:none}
+.stepper:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 22%,transparent)}
+.notice{border-radius:12px;padding:11px 14px;margin-bottom:14px;border:1px solid transparent;font-size:13.5px}
+.notice.has-ic{display:flex;gap:10px;align-items:flex-start}
+.notice.has-ic>.i{margin-top:2px;width:18px;height:18px}
+.notice.has-ic>div{flex:1;min-width:0}
+.notice ul{margin:6px 0 4px;padding-left:18px}
+.notice.warn{background:var(--warn-soft);color:var(--warn);border-color:color-mix(in srgb,var(--warn) 18%,transparent)}
+.notice.err{background:var(--danger-soft);color:var(--danger);border-color:color-mix(in srgb,var(--danger) 18%,transparent)}
+.notice.info{background:var(--info-soft);border-color:color-mix(in srgb,var(--accent) 14%,transparent)}
+.notice.info>.i{color:var(--accent)}
+.notice.ok{background:var(--ok-soft);color:var(--ok)}
+.tip{position:relative;display:inline-grid;place-items:center;width:20px;height:20px;border:0;background:none;color:var(--faint);cursor:help;padding:0;border-radius:50%;flex:none;font:inherit}
+.tip .i{width:15px;height:15px}
+.tip:hover,.tip:focus{color:var(--accent);outline:none}
+.tip::after{content:attr(data-tip);position:absolute;left:-10px;top:calc(100% + 8px);width:max-content;max-width:min(280px,calc(100vw - 40px));background:var(--text);color:var(--bg);padding:9px 11px;border-radius:9px;font-size:12.5px;line-height:1.45;font-weight:400;letter-spacing:0;text-align:left;white-space:normal;display:none;z-index:60;box-shadow:var(--shadow-lg);pointer-events:none}
+.tip:hover::after,.tip:focus::after{display:block}
+.nextbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 18px;border:1px dashed var(--border-strong);border-radius:var(--radius);margin-top:4px}
+.nextbar>span{display:flex;gap:8px;align-items:center}
+.card.empty{text-align:center;padding:40px 20px}
+.card.empty h3{justify-content:center}
+.ic-box{width:44px;height:44px;border-radius:13px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin:0 auto 12px}
+.ic-box .i{width:22px;height:22px}
+.av{width:32px;height:32px;border-radius:50%;display:inline-grid;place-items:center;font-weight:700;font-size:12px;color:#fff;flex:none;letter-spacing:.02em;line-height:1}
+.av.sm{width:26px;height:26px;font-size:10.5px}
+.av.lg{width:44px;height:44px;font-size:15px}
+.prog{height:8px;border-radius:4px;background:var(--surface-3);overflow:hidden;margin-top:8px}
+.prog i{display:block;height:100%;border-radius:4px;background:var(--ok);transition:width .3s}
+
+/* Tervetuloa */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:32px;align-items:center;background:linear-gradient(135deg,var(--accent-soft) 0%,var(--sun-soft) 100%);border:1px solid var(--border);border-radius:20px;padding:34px;margin-bottom:16px;overflow:hidden}
+.hero h2{font-size:clamp(24px,3.2vw,32px);line-height:1.15;margin:12px 0 12px;font-weight:800;letter-spacing:-.025em}
+.hero p{font-size:15.5px;color:var(--muted);max-width:560px}
+.hero .row{margin:20px 0 14px}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12.5px;color:var(--accent-ink);background:var(--surface);border-radius:999px;padding:4px 11px 4px 8px;box-shadow:var(--shadow)}
+.eyebrow .i{color:var(--sun)}
+.hero-note{display:flex;align-items:center;gap:6px;margin:0!important;font-size:13px!important}
+.hero-note .i{color:var(--ok)}
+@media (max-width:820px){.hero{grid-template-columns:minmax(0,1fr);padding:22px}.hero-art{display:none}}
+.art{background:var(--surface);border-radius:16px;box-shadow:var(--shadow-lg);padding:14px 16px 12px;transform:rotate(-1.5deg)}
+.art-head{display:grid;grid-template-columns:repeat(12,1fr);margin-left:58px;font-size:10px;color:var(--faint);text-align:center;margin-bottom:4px}
+.art-row{display:flex;align-items:center;gap:10px;height:27px}
+.art-name{width:48px;height:8px;border-radius:4px;background:var(--surface-3);flex:none}
+.art-track{position:relative;flex:1;height:17px;background-image:linear-gradient(90deg,transparent calc(100% - 1px),var(--border) 0);background-size:calc(100% / 12) 100%}
+.art-bar{position:absolute;top:0;bottom:0;border-radius:6px}
+.art-bar.l1{background:var(--l1)}.art-bar.l2{background:var(--l2)}.art-bar.l3{background:var(--l3)}
+.art-foot{display:flex;gap:12px;margin:10px 0 0 58px;font-size:10.5px;color:var(--muted)}
+.art-foot i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:4px;vertical-align:-1px}
+.how3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:28px}
+@media (max-width:720px){.how3{grid-template-columns:minmax(0,1fr)}}
+.how{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.how .ic-box{margin:0 0 10px;width:38px;height:38px}
+.how b{display:block;margin-bottom:4px}
+.how p{margin:0;font-size:13px;color:var(--muted)}
+
+/* Taulukot ja valitsimet */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.tbl{border-collapse:collapse;width:100%}
+.tbl th,.tbl td{padding:9px 10px;border-bottom:1px solid var(--border);text-align:left;vertical-align:middle}
+.tbl th{font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap}
+.tbl tbody tr:hover td{background:color-mix(in srgb,var(--surface-2) 55%,transparent)}
+.tbl td.num,.tbl th.num{text-align:right;font-variant-numeric:tabular-nums}
+.tbl td>.row{white-space:nowrap}
+.tbl td>.row .muted{white-space:normal}
+.tbl tr.total td{font-weight:700;border-top:2px solid var(--border-strong);border-bottom:0}
+.tbl input.in{width:100%;min-width:140px}
+.tbl select{max-width:220px}
+.seg{display:inline-flex;flex-wrap:wrap;background:var(--surface-2);border-radius:10px;padding:3px;gap:2px}
+.seg button{border:0;background:none;color:var(--muted);padding:6px 12px;font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;border-radius:8px}
+.seg button:hover:not(:disabled):not(.on){color:var(--text);background:var(--surface-3)}
+.seg button.on{background:var(--accent);color:var(--on-accent)}
+.seg button:disabled{cursor:default}
+.seg.xs{margin:3px 0 2px;padding:2px}
+.seg.xs button{padding:2px 7px;font-size:11px;border-radius:6px}
+
+/* Henkilöt ja toivekalenteri */
+.progress-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+.progress-card .pg-hot{border-left:1px solid var(--border);padding-left:20px;display:grid;gap:2px;min-width:200px}
+.pg-hot b .i{color:var(--l4)}
+@media (max-width:720px){.progress-card{grid-template-columns:minmax(0,1fr)}.progress-card .pg-hot{border-left:0;padding-left:0;border-top:1px solid var(--border);padding-top:12px}}
+.pgrid{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:16px;align-items:start;margin-bottom:16px}
+.pgrid>.card{margin-bottom:0}
+.plist-card{padding:12px}
+@media (min-width:921px){.plist-card{position:sticky;top:148px}}
+@media (max-width:920px){.pgrid{grid-template-columns:minmax(0,1fr)}.plist{max-height:40vh}}
+.psearch{position:relative;display:block;margin-bottom:8px}
+.psearch .i{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--faint)}
+.psearch input{width:100%;padding-left:32px}
+.plist{display:flex;flex-direction:column;gap:6px;max-height:64vh;overflow:auto;padding:2px}
+.pcard{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1px 10px;align-items:center;text-align:left;border:1px solid var(--border);background:var(--surface);border-radius:12px;padding:9px 11px;cursor:pointer;font:inherit;color:inherit;width:100%}
+.pcard[hidden]{display:none}
+.pcard:hover{background:var(--surface-2)}
+.pcard.sel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.pcard>.av{grid-row:span 2}
+.pc-top{display:flex;justify-content:space-between;gap:6px;align-items:center;min-width:0}
+.pc-top b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc-sub{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pcard .mini{grid-column:1/-1}
+.st-ok{color:var(--ok);display:inline-flex}.st-warn{color:var(--warn);display:inline-flex}
+.mini{display:flex;gap:1px;margin-top:6px}
+.mini i{flex:1;height:5px;border-radius:2px;background:var(--surface-3)}
+.mini i.m1{background:var(--l1)}.mini i.m2{background:var(--l2)}.mini i.m3{background:var(--l3)}
+.ed-head{display:flex;gap:10px;align-items:center;margin-bottom:16px}
+.ed-head input{font-size:18px;font-weight:650;flex:1;min-width:0}
+.ed-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px}
+.field-label{display:flex;align-items:center;gap:4px;font-weight:600;font-size:12px;color:var(--muted);margin-bottom:6px}
+.hint{display:flex;gap:8px;align-items:flex-start;background:var(--surface-2);border-radius:10px;padding:9px 12px;font-size:12.5px;color:var(--muted);margin-bottom:12px}
+.hint .i{color:var(--accent);margin-top:1px}
+.wgrid{border-collapse:separate;border-spacing:0;font-size:12px;user-select:none}
+.wgrid th,.wgrid td{min-width:30px;height:30px;text-align:center;padding:0}
+.wgrid th.lab{position:sticky;left:0;background:var(--surface);text-align:left;padding:0 10px 0 0;min-width:118px;white-space:nowrap;font-weight:600;z-index:1;line-height:1.15}
+.wgrid th.lab small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.wgrid th.lab b{display:block;padding-top:4px}
+.wgrid tr.months th{font-weight:600;color:var(--muted);border-left:1px solid var(--border);text-align:left;padding-left:5px;height:20px;text-transform:capitalize}
+.wgrid tr.wks th{font-weight:500;color:var(--muted);font-size:11px;height:22px}
+.wgrid td.cell{cursor:pointer;border-left:1px solid color-mix(in srgb,var(--border) 60%,transparent);border-bottom:1px solid var(--border)}
+.wgrid:not(.locked) td.cell:hover,.wgrid td.pv{background:var(--accent-soft)}
+.wgrid.locked td.cell{cursor:default}
+.wgrid tr.dim th,.wgrid tr.dim td.cell{opacity:.3;filter:grayscale(1)}
+.wgrid td.on.fx{background:var(--accent)}
+.closedc{background:repeating-linear-gradient(45deg,var(--surface-2) 0 4px,transparent 4px 8px)!important;color:var(--muted);font-size:10px}
+.cal td.closedv{background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--accent) 60%,transparent) 0 4px,color-mix(in srgb,var(--accent) 30%,transparent) 4px 8px)}
+.legend i.closedv{background:repeating-linear-gradient(45deg,color-mix(in srgb,var(--accent) 60%,transparent) 0 3px,color-mix(in srgb,var(--accent) 30%,transparent) 3px 6px)}
+/* Toivejakso piirretään ohuena palkkina solun keskelle */
+.wgrid td.on{color:#fff;font-weight:700;font-size:11px;position:relative;z-index:0;--kc:var(--l1);border-left-color:transparent}
+.wgrid td.on:not(.first)::before{left:-1px}
+.wgrid td.on::before{content:"";position:absolute;left:0;right:0;top:50%;height:24px;transform:translateY(-50%);background:var(--kc);z-index:-1}
+.wgrid td.on.k1{--kc:var(--l2);color:#13310f}.wgrid td.on.k2{--kc:var(--l3);color:#3a2f00}
+.wgrid td.on.fx{--kc:var(--accent);background:none}
+.wgrid td.on.first::before{left:2px;border-top-left-radius:7px;border-bottom-left-radius:7px}
+.wgrid td.on.last::before{right:2px;border-top-right-radius:7px;border-bottom-right-radius:7px}
+.wgrid tr.sep th,.wgrid tr.sep td{border-top:8px solid var(--surface)}
+.wgrid tr.demand td{font-size:11px;font-weight:600;color:var(--muted);border-bottom:2px solid var(--border-strong)}
+.wgrid tr.demand td.full{background:var(--warn-soft);color:var(--warn)}
+.wgrid tr.demand td.over{background:var(--danger-soft);color:var(--danger)}
+.wsum{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px}
+.wsum li.dim{opacity:.4}
+.ed-extra{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border)}
+@media (max-width:700px){.ed-extra{grid-template-columns:minmax(0,1fr)}}
+.ed-extra small{display:flex;gap:5px;align-items:flex-start;margin-top:5px;font-size:12px}
+.ed-extra small .i{width:13px;height:13px;margin-top:1px}
+.ed-extra textarea{font-family:inherit;font-size:14px}
+.ed-nav{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:18px;padding-top:14px;border-top:1px solid var(--border)}
+.notechip{color:var(--accent)}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;text-align:left;font-weight:550}
+.linkbtn:hover{color:var(--accent);text-decoration:underline}
+
+/* Viikkopoikkeukset */
+.weeks{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.wk{border:1px solid var(--border);border-radius:10px;padding:7px 6px;text-align:center;display:block;background:var(--surface)}
+.wk b{display:block}.wk span{display:block;font-size:11px;color:var(--muted);margin-bottom:4px}
+.wk.changed{border-color:var(--accent);background:var(--accent-soft)}
+.wk input{width:56px;text-align:center;padding:4px}
+.wk.closed{border-color:var(--accent);background:repeating-linear-gradient(45deg,var(--accent-soft) 0 6px,transparent 6px 12px)}
+
+/* Mahtuvuus */
+.capnum{display:flex;align-items:baseline;gap:6px;font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.capnum small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}
+.capstate{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12.5px;border-radius:999px;padding:3px 10px}
+.capstate .i{width:14px;height:14px}
+.capstate.ok{background:var(--ok-soft);color:var(--ok)}.capstate.warn{background:var(--warn-soft);color:var(--warn)}.capstate.err{background:var(--danger-soft);color:var(--danger)}
+.capbar{height:10px;border-radius:5px;background:var(--surface-3);overflow:hidden;margin:12px 0 8px}
+.capbar i{display:block;height:100%;border-radius:5px;background:var(--l1)}
+.capbar.warn i{background:var(--l4)}.capbar.err i{background:var(--l5)}
+.caproles{list-style:none;margin:12px 0 0;padding:12px 0 0;border-top:1px solid var(--border);display:grid;gap:4px;font-size:12.5px;color:var(--muted)}
+
+/* Tulos */
+.summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center}
+.summary .big{font-size:22px;font-weight:800;letter-spacing:-.015em;margin:0 0 4px;line-height:1.25}
+.sum-ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--ok-soft);color:var(--ok)}
+.sum-ic.warn{background:var(--warn-soft);color:var(--warn)}
+.sum-ic .i{width:26px;height:26px}
+.dist{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--surface-3);margin:16px 0 10px;gap:2px}
+.dist span{display:block;height:100%}
+.dist-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12.5px;color:var(--muted)}
+.dist-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.bg1{background:var(--l1)}.bg2{background:var(--l2)}.bg3{background:var(--l3)}.bg4{background:var(--l4)}.bg5{background:var(--l5)}.bg0{background:var(--l0)}.bg6{background:var(--accent)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin:0 0 16px}.metric{border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;background:var(--surface);box-shadow:var(--shadow);display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 12px;align-items:center}
+.metric .mi{grid-row:span 3;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent)}
+.metric .mi.ok{background:var(--ok-soft);color:var(--ok)}.metric .mi.warn{background:var(--warn-soft);color:var(--warn)}.metric .mi.err{background:var(--danger-soft);color:var(--danger)}
+.metric .mi .i{width:20px;height:20px}
+.metric .k{font-size:12.5px;color:var(--muted);font-weight:600}
+.metric .v{font-size:22px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2;letter-spacing:-.01em}
+.metric .d{font-size:11.5px;color:var(--muted);line-height:1.35}
+.ready{text-align:center;padding:40px 20px}
+.ready h3{justify-content:center;font-size:19px}
+.ready-ic{width:58px;height:58px;border-radius:18px;margin:0 auto 14px;background:linear-gradient(135deg,#2b86d9,#155ca3);color:#fff;display:grid;place-items:center;box-shadow:0 8px 20px rgba(28,110,192,.3)}
+.ready-ic .i{width:28px;height:28px}
+.checks{list-style:none;padding:0;margin:12px auto 22px;display:inline-grid;gap:9px;text-align:left;max-width:520px}
+.checks li{display:flex;gap:9px;align-items:flex-start}
+.checks li .i{margin-top:2px}
+.checks li.ok .i{color:var(--ok)}.checks li.warn .i{color:var(--warn)}.checks li.err .i{color:var(--danger)}.checks li.info .i{color:var(--accent)}
+.pipe{list-style:none;margin:12px 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:10px}
+.pipe li{background:var(--surface-2);border-radius:12px;padding:14px}
+.pipe .ic{width:32px;height:32px;border-radius:10px;background:var(--surface);color:var(--accent);display:grid;place-items:center;margin-bottom:9px;box-shadow:var(--shadow)}
+.pipe b{display:block;font-size:13.5px;margin-bottom:3px}
+.pipe p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.45}
+.order{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:3px 10px 3px 3px;border-radius:999px;background:var(--surface-2);font-size:12.5px;border:1px solid var(--border);white-space:nowrap}
+.chip .n{min-width:22px;height:22px;border-radius:11px;background:var(--surface);display:grid;place-items:center;font-weight:700;font-size:11px;padding:0 5px}
+.chip.lot .n{background:var(--sun-soft);color:var(--warn)}
+.personpanel{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft),var(--shadow);scroll-margin-top:150px}
+.pp-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap}
+.pp-head h3{margin:0;font-size:18px}
+.pp-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px}
+@media (max-width:860px){.pp-grid{grid-template-columns:minmax(0,1fr)}}
+.pp-sec-title{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:0 0 12px;display:flex;align-items:center;gap:6px}
+.pp-current{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--surface-2);border-radius:10px;padding:10px 12px;margin-bottom:16px}
+.pp-current>.i{color:var(--accent)}
+.story{list-style:none;margin:0;padding:0}
+.story li{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;padding-bottom:14px;position:relative;font-size:13.5px}
+.story li::before{content:"";position:absolute;left:14px;top:32px;bottom:2px;width:2px;background:var(--border)}
+.story li:last-child{padding-bottom:0}
+.story li:last-child::before{display:none}
+.story li>div{padding-top:5px}
+.story .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--surface-2);color:var(--muted)}
+.story .dot .i{width:15px;height:15px}
+.story .dot.ok{background:var(--ok-soft);color:var(--ok)}.story .dot.no{background:var(--danger-soft);color:var(--danger)}.story .dot.info{background:var(--accent-soft);color:var(--accent)}.story .dot.warn{background:var(--warn-soft);color:var(--warn)}
+.opts{display:flex;flex-direction:column;gap:6px;margin:0 0 10px}
+.opts .btn{justify-content:flex-start;text-align:left;flex-wrap:wrap;white-space:normal}
+.opts .why{font-weight:400;font-size:12px;color:var(--danger);display:inline-flex;gap:4px;align-items:center}
+.opts .fits{font-weight:400;font-size:12px;color:var(--ok);display:inline-flex;gap:4px;align-items:center}
+.opts .btn.primary .muted{color:inherit;opacity:.8}
+
+/* Toivesijat ja kalenteri */
+.lv{display:inline-flex;align-items:center;justify-content:center;min-width:30px;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;color:#fff;white-space:nowrap}
+.lv6{background:var(--accent);color:var(--on-accent)}
+.lv1{background:var(--l1)}.lv2{background:var(--l2);color:#13310f}.lv3{background:var(--l3);color:#3a2f00}.lv4{background:var(--l4);color:#2e1600}.lv5{background:var(--l5)}.lv0{background:var(--l0)}
+.comp{display:inline-block;min-width:26px;text-align:center;padding:1px 6px;border-radius:6px;font-size:12px;font-weight:700;background:var(--sun-soft);color:var(--warn)}
+.comp.zero{background:none;color:var(--muted);font-weight:400}
+.legend{display:flex;gap:6px 14px;flex-wrap:wrap;margin:6px 0 12px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:5px}
+.legend i.wish{outline:2px dashed var(--l1);outline-offset:-2px}
+.cal{border-collapse:separate;border-spacing:0;font-size:12px}
+.cal th,.cal td{border-bottom:1px solid var(--border);padding:0;height:30px;min-width:32px;text-align:center}
+.cal thead th{color:var(--muted);font-weight:600;padding:4px 0}
+.cal th small{display:block;font-weight:400;font-size:10px}
+.cal .name{position:sticky;left:0;background:var(--surface);text-align:left;padding:0 10px;min-width:180px;white-space:nowrap;z-index:1;border-right:1px solid var(--border)}
+.cal td.v{color:#fff;font-weight:700;font-size:11px;padding:5px 0;background-clip:content-box}
+.cal td.lv2,.cal td.lv3,.cal td.lv4{color:#2a2a00}
+.cal td.wish{outline:2px dashed var(--l1);outline-offset:-5px;border-radius:7px}
+.cal tr.group td{background:var(--surface-2);font-weight:700;text-align:left;padding:0 10px;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.cal tr.group td.name{background:var(--surface-2)}
+.cal tfoot td{font-weight:600;font-variant-numeric:tabular-nums;font-size:11px}
+.cal tfoot td.name{font-weight:600;font-size:12px}
+.cal td.full{background:var(--warn-soft);color:var(--warn)}
+.cal td.bad{background:var(--danger-soft);color:var(--danger)}
+.cal tr.selrow td:not(.v){background:var(--accent-soft)}
+.cal tr.selrow td.mv{cursor:pointer}
+.cal tr.selrow td.mv:hover{outline:2px solid var(--accent);outline-offset:-3px}
+.cal tbody tr:not(.group):hover td.name{color:var(--accent)}
+
+@media (max-width:520px){
+  .metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.metric{grid-template-columns:minmax(0,1fr);padding:12px}.metric .mi{display:none}.metric .v{font-size:19px}
+  .topbar-inner{flex-wrap:nowrap}.year-field input{width:70px}.summary .big{font-size:19px}.sum-ic{display:none}.card{padding:16px}
+}
+
+/* Historia */
+.pbar{display:flex;align-items:center;gap:8px}
+.pbar i{display:block;height:8px;border-radius:4px;background:var(--sun);min-width:2px}
+.pts{list-style:none;padding:0;margin:8px 0 12px;display:grid;gap:6px}
+.pts li{display:flex;align-items:center;gap:10px}
+.pts .lv{min-width:88px}
+.example{background:var(--surface-2);border-radius:12px;padding:13px 15px;font-size:13.5px}
+.example b{color:var(--accent-ink)}
+
+/* Ohje */
+.help-layout{display:grid;grid-template-columns:230px minmax(0,1fr);gap:24px;align-items:start}
+.toc{position:sticky;top:150px;display:flex;flex-direction:column;gap:2px}
+.toc a{color:var(--muted);text-decoration:none;padding:7px 10px;border-radius:9px;font-size:13.5px;font-weight:550;display:flex;gap:9px;align-items:center}
+.toc a:hover{background:var(--surface);color:var(--text)}
+@media (max-width:900px){.help-layout{grid-template-columns:minmax(0,1fr)}.toc{display:none}}
+.help-sec{scroll-margin-top:150px;max-width:860px}
+.help-sec li{margin-bottom:5px}
+.help-sec h4{margin:16px 0 6px;font-size:14px}
+.formula{font-family:ui-monospace,Consolas,monospace;background:var(--surface-2);padding:8px 10px;border-radius:8px;display:inline-block;font-size:13px}
+.faq details{border-bottom:1px solid var(--border);padding:13px 0}
+.faq details:first-child{padding-top:0}
+.faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--muted);font-weight:400;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:8px 0 0;color:var(--muted)}
+.never{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.never li{display:flex;gap:8px;align-items:flex-start}
+.never .i{color:var(--ok);margin-top:2px}
+
+/* Valikot, ikkunat, ilmoitukset */
+details.menu{position:relative}
+details.menu summary{list-style:none}
+details.menu summary::-webkit-details-marker{display:none}
+.menu-pop{position:absolute;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow-lg);padding:6px;min-width:270px;z-index:40}
+.menu-pop button,.menu-pop label{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;padding:9px 10px;border-radius:8px;font:inherit;color:var(--text);cursor:pointer}
+.menu-pop button:hover,.menu-pop label:hover{background:var(--surface-2)}
+.menu-pop .i{margin-top:2px;color:var(--muted)}
+.menu-pop b{display:block;font-weight:600;font-size:13.5px}
+.menu-pop small{display:block;color:var(--muted);font-size:12px;font-weight:400}
+.menu-pop hr{border:0;border-top:1px solid var(--border);margin:4px 6px}
+.menu-pop .danger-text,.menu-pop .danger-text .i{color:var(--danger)}
+details.box{border:1px solid var(--border);border-radius:12px;padding:11px 14px;margin-bottom:10px;background:var(--surface)}
+details.box summary{cursor:pointer;font-weight:600;display:flex;align-items:center;gap:8px}
+details.box summary .i{color:var(--accent)}
+details.box[open] summary{margin-bottom:8px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--text);color:var(--bg);padding:11px 18px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:50;max-width:calc(100% - 32px);display:flex;gap:8px;align-items:center;box-shadow:var(--shadow-lg);font-weight:550}
+.toast .i{color:var(--l2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.dlg{border:1px solid var(--border);border-radius:16px;padding:22px;max-width:440px;width:calc(100% - 32px);background:var(--surface);color:var(--text);box-shadow:var(--shadow-lg)}
+.dlg::backdrop{background:rgba(10,15,25,.45)}
+.dlg p{margin:0 0 20px;font-size:15px}
+footer{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;color:var(--muted);font-size:12.5px;padding:0 0 32px}
+footer span{display:inline-flex;gap:6px;align-items:center}
+footer .i{color:var(--ok)}
+@media print{
+  body{background:#fff;color:#000}
+  .topbar,.no-print,footer,.toast{display:none!important}
+  .tab{display:none!important}
+  #tab-result{display:block!important}
+  .card{box-shadow:none;border:0;padding:0}
+  .cal td.v{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<!-- Ikonit: Lucide (ISC-lisenssi, lucide.dev), upotettu tiedostoon, jotta sovellus toimii ilman verkkoyhteyttä -->
+<svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true"><defs>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+<symbol id="i-sliders" viewBox="0 0 24 24"><path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-calendar-range" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M3 10h18M8 2v4M17 14h-6M13 18H7M7 14h.01M17 18h.01"/></symbol>
+<symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5M12 7v5l4 2"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2zM22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></symbol>
+<symbol id="i-file-spreadsheet" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M8 13h2M14 13h2M8 17h2M14 17h2"/></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+<symbol id="i-unlock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+<symbol id="i-shuffle" viewBox="0 0 24 24"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4M2 6h1.9c1.5 0 2.9.9 3.6 2.2M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8M18 14l4 4-4 4"/></symbol>
+<symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/><path d="M5 3v4M19 17v4M3 5h4M17 19h4"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+<symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-circle-dashed" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke-dasharray="3.6 3"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4M12 17h.01"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2M10 11v6M14 11v6"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1ZM2 16l3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10M12 3v18M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+<symbol id="i-list" viewBox="0 0 24 24"><path d="M10 6h11M10 12h11M10 18h11M4 6h1v4M4 10h2M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></symbol>
+<symbol id="i-dice" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M16 8h.01M8 8h.01M8 16h.01M16 16h.01M12 12h.01"/></symbol>
+<symbol id="i-arrows" viewBox="0 0 24 24"><path d="M8 3 4 7l4 4M4 7h16M16 21l4-4-4-4M20 17H4"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+<symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+<symbol id="i-clipboard" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M12 11h4M12 16h4M8 11h.01M8 16h.01"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1M12 18h1M7 18h1"/></symbol>
+<symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+<symbol id="i-trending" viewBox="0 0 24 24"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+<symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+<symbol id="i-move" viewBox="0 0 24 24"><path d="M5 9l-3 3 3 3M9 5l3-3 3 3M15 19l-3 3-3-3M19 9l3 3-3 3M2 12h20M12 2v20"/></symbol>
+<symbol id="i-lightbulb" viewBox="0 0 24 24"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5M9 18h6M10 22h4"/></symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+<symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+<symbol id="i-pointer" viewBox="0 0 24 24"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1M5.1 8l-2.9-.8M14 4.1 12 6M6 12l-1.9 2"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+</defs></svg>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="lgLogo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b86d9"/><stop offset="1" stop-color="#155ca3"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#lgLogo)"/><circle cx="25" cy="15" r="6.5" fill="#f6b531"/><path d="M7 26c3 0 3-2.2 6.5-2.2S17 26 20 26s3.5-2.2 6.5-2.2S30 26 33 26" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M7 31.5c3 0 3-2.2 6.5-2.2s3.5 2.2 6.5 2.2 3.5-2.2 6.5-2.2 3.5 2.2 6.5 2.2" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <div><h1>Lomajako</h1><div class="sub">Reilu kesälomajako vuorotyöhön</div></div>
+    </div>
+    <div class="top-actions">
+      <span id="saveStatus" class="save-status"></span>
+      <label class="year-field"><span class="hide-sm">Kesä</span><input type="number" id="yearIn" min="2000" max="2100" aria-label="Kesä (lomavuosi)"></label>
+      <button type="button" class="icon-btn" id="themeBtn" data-act="theme" aria-label="Vaihda teema"></button>
+      <details class="menu" id="fileMenu">
+        <summary class="btn"><svg class="i" aria-hidden="true"><use href="#i-database"/></svg><span class="hide-sm">Tiedot</span><svg class="i" aria-hidden="true"><use href="#i-chevron-down"/></svg></summary>
+        <div class="menu-pop">
+          <button data-act="demo"><svg class="i"><use href="#i-sparkles"/></svg><span><b>Lataa esimerkkiaineisto</b><small>Hoivayksikkö, 16 henkilöä, 2 roolia</small></span></button>
+          <button data-act="backup"><svg class="i"><use href="#i-download"/></svg><span><b>Vie varmuuskopio</b><small>Tallenna tiedot tiedostoksi omalle koneelle</small></span></button>
+          <label><svg class="i"><use href="#i-upload"/></svg><span><b>Tuo varmuuskopio</b><small>Palauta aiemmin tallennettu tiedosto</small></span><input type="file" id="fileBackup" accept=".json,application/json" hidden></label>
+          <hr>
+          <button data-act="reset" class="danger-text"><svg class="i"><use href="#i-trash"/></svg><span><b>Tyhjennä kaikki tiedot</b><small>Poistaa tiedot tästä selaimesta</small></span></button>
+        </div>
+      </details>
+    </div>
+  </div>
+  <nav class="wrap steps" id="tabs" aria-label="Vaiheet"></nav>
+</header>
+
+<main class="wrap">
+  <section class="tab" id="tab-settings"></section>
+  <section class="tab" id="tab-people"></section>
+  <section class="tab" id="tab-result"></section>
+  <section class="tab" id="tab-history"></section>
+  <section class="tab" id="tab-help"></section>
+</main>
+<footer class="wrap"><span><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg>Tiedot tallentuvat vain tämän selaimen muistiin, eivätkä ne lähde koneelta. Ota välillä varmuuskopio Tiedot-valikosta.</span><span>Lomajako · demoversio</span></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<dialog id="askDlg" class="dlg">
+  <p id="askMsg"></p>
+  <div class="row" style="justify-content:flex-end"><button type="button" class="btn" id="askCancel">Peruuta</button><button type="button" class="btn primary" id="askOk">OK</button></div>
+</dialog>
+
+<script>
+'use strict';
+/* =========================================================================
+   Vakiot
+   ========================================================================= */
+const STORE_KEY = 'lomajako.v1', TAB_KEY = 'lomajako.tab';
+const MAX_WISHES = 3, RUNS = 500, DECAY = 0.5;
+// 1–3 = toivesija, 4 = muu jakso, 5 = ei lomaa kaudella, 0 = ei toiveita (sijoitettu vapaaseen kohtaan)
+// 6 = koko loma on yhteisen sulun aikana (ei toiveita, ei vaikuta etusijaan)
+const LEVEL_LABEL = {1:'1. toive', 2:'2. toive', 3:'3. toive', 4:'Muu jakso', 5:'Ei lomaa kaudella', 0:'Ei toiveita', 6:'Vain sulku'};
+const LEVEL_SHORT = {1:'1.', 2:'2.', 3:'3.', 4:'muu', 5:'–', 0:'vapaa', 6:''};
+const FIRST = ['Aino','Eeva','Helmi','Ilona','Johanna','Katja','Laura','Minna','Noora','Pia','Riikka','Sanna','Tiina','Ulla','Veera','Anni','Elina','Hanna','Juha','Mikko','Antti','Jari','Pekka','Timo','Ville','Sami','Lauri','Matti'];
+const LAST = ['Virtanen','Korhonen','Mäkinen','Nieminen','Mäkelä','Hämäläinen','Laine','Heikkinen','Koskinen','Järvinen','Lehtonen','Lehtinen','Saarinen','Salminen','Heinonen','Niemi','Heikkilä','Kinnunen','Salonen','Turunen'];
+
+/* =========================================================================
+   Apufunktiot
+   ========================================================================= */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = p => p + Math.random().toString(36).slice(2, 10);
+const norm = s => String(s ?? '').toLowerCase().replace(/\s+/g, '');
+const randSeed = () => Math.floor(Math.random() * 900000) + 100000;
+const clamp = (x, a, b) => Math.max(a, Math.min(b, x));
+const pct = x => Number.isFinite(x) ? Math.round(x * 100) + ' %' : '–';
+const tick = () => new Promise(r => setTimeout(r, 0));
+function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+/* Oma vahvistusikkuna selaimen confirm()-ikkunan sijaan. Selaimessa voi valita "estä lisäilmoitukset",
+   jonka jälkeen confirm() palauttaa aina false, eikä mitään voisi enää poistaa. */
+function ask(msg, okLabel = 'OK', danger = false){
+  const d = $('#askDlg'), ok = $('#askOk'), no = $('#askCancel');
+  $('#askMsg').textContent = msg; ok.textContent = okLabel; ok.classList.toggle('danger', danger);
+  // Vastaus suoraan napeista ja Esc-näppäimestä (ei dialogin close-tapahtuman varassa)
+  return new Promise(res => {
+    const done = v => { ok.onclick = no.onclick = d.oncancel = d.onkeydown = null; if (d.open) d.close(); res(v); };
+    ok.onclick = () => done(true);
+    no.onclick = () => done(false);
+    d.oncancel = e => { e.preventDefault(); done(false); };
+    d.onkeydown = e => { if (e.key === 'Escape'){ e.preventDefault(); done(false); } };
+    d.showModal(); ok.focus();
+  });
+}
+function toast(msg){ const t = $('#toast'); t.innerHTML = I('check-circle') + '<span></span>'; t.lastChild.textContent = msg; t.classList.add('show'); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove('show'), 2600); }
+function download(name, text, type){ const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], {type})); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); }
+const readFileText = f => new Promise((ok, err) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = err; r.readAsText(f); });
+// Ikoni sivun alussa olevasta SVG-kokoelmasta, ohjevihje ja nimikirjaimet
+const I = (n, c = '') => `<svg class="i${c ? ' ' + c : ''}" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const tip = t => `<button type="button" class="tip" data-tip="${esc(t)}" aria-label="${esc(t)}">${I('info')}</button>`;
+const AV_COLORS = ['#1c6ec0', '#1f9d5a', '#c2632c', '#8a4fc7', '#c23a72', '#0f8a8a', '#6b7a1f', '#b07d0b', '#4a5fc1', '#a3482f'];
+function avatar(name, size = ''){
+  const n = String(name || '').trim(), ini = n ? n.split(/\s+/).map(x => x[0]).slice(0, 2).join('').toUpperCase() : '?';
+  let h = 0; for (const ch of n) h = (h * 31 + ch.charCodeAt(0)) | 0;
+  return `<span class="av${size ? ' ' + size : ''}" style="background:${AV_COLORS[Math.abs(h) % AV_COLORS.length]}" aria-hidden="true">${esc(ini)}</span>`;
+}
+
+/* Viikot ja päivämäärät (ISO-viikot) */
+function weekMonday(y, w){ const j = new Date(y, 0, 4); const d = (j.getDay() + 6) % 7; return new Date(y, 0, 4 - d + (w - 1) * 7); }
+const dm = d => d.getDate() + '.' + (d.getMonth() + 1) + '.';
+const dmy = d => d.getDate() + '.' + (d.getMonth() + 1) + '.' + d.getFullYear();
+function weekEnd(y, w){ const d = weekMonday(y, w); d.setDate(d.getDate() + 6); return d; }
+function rangeLabel(s, len){
+  const a = weekMonday(state.year, s), b = weekEnd(state.year, s + len - 1);
+  return (len > 1 ? `vk ${s}–${s + len - 1}` : `vk ${s}`) + ` (${dm(a)}–${dm(b)})`;
+}
+
+/* =========================================================================
+   Tila
+   ========================================================================= */
+function defaultState(){
+  return {v:1, year:new Date().getFullYear() + 1, ss:18, se:39, defMax:3, weekMax:{}, comp:true, minMain:2, unit:'', deadline:'', cf:0, ct:0,
+          roles:[], people:[], history:[], result:null, seed:randSeed()};
+}
+function normalizeState(s){
+  const d = defaultState(); s = Object.assign(d, s || {});
+  ['roles','people','history'].forEach(k => { if (!Array.isArray(s[k])) s[k] = []; });
+  if (!s.weekMax || typeof s.weekMax !== 'object') s.weekMax = {};
+  s.people.forEach(p => {
+    if (!Array.isArray(p.wishes)) p.wishes = [];
+    // Vanha muoto: alkuviikot listana ja jako henkilökohtaisena (p.split)
+    p.wishes = p.wishes.map(w => w == null ? null : !Array.isArray(w) && typeof w === 'object' ? w
+      : {sp: Array.isArray(w) && w.length === 2 ? +p.split || 0 : 0, s: Array.isArray(w) ? w : [w]});
+    p.len = clamp(+p.len || 4, 1, 6); delete p.split;
+  });
+  // Vanha muoto: rooleilla "vähintään paikalla" (min). Nyt "lomalla enintään" (max) = henkilöt − min.
+  s.roles.forEach(r => {
+    if (r.max == null) r.max = Math.max(0, s.people.filter(p => p.role === r.id).length - (+r.min || 0));
+    delete r.min;
+  });
+  if (s.result && Object.values(s.result.A || {}).some(a => a.s && !Array.isArray(a.s[0]))) s.result = null;
+  return s;
+}
+function loadState(){ try { return normalizeState(JSON.parse(localStorage.getItem(STORE_KEY))); } catch { return defaultState(); } }
+let state = loadState();
+function save(){
+  try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); $('#saveStatus').innerHTML = I('check-circle') + ' Tallennettu ' + new Date().toLocaleTimeString('fi-FI', {hour:'2-digit', minute:'2-digit'}); }
+  catch { $('#saveStatus').innerHTML = I('alert') + ' Tallennus ei onnistu, ota varmuuskopio'; }
+}
+/* Lomasuunnitelma (plan) = osat [[alkuviikko, pituus], ...], esim. [[27, 4]] tai [[27, 3], [35, 1]].
+   Toive tallennetaan muodossa {sp, s}: sp = pidemmän osan pituus (0 = yhtenä), s = osien alkuviikot.
+   Jokaisella toiveella on oma muotonsa. Jaetun loman pidempi osa on vähintään minMain viikkoa
+   (vuosilomalaki: 12 arkipäivää yhtenäisenä). */
+/* Yhteinen sulku (esim. tehdasloma): viikot cf–ct, jolloin kaikki ovat lomalla.
+   Sulku lasketaan osaksi jokaisen kesälomaa. Toiveet ja jako koskevat vain loppuosaa (freeLen),
+   eikä loppuosa voi osua sulkuviikoille. Jos sulku täyttää jo yhtenäisyysvaatimuksen, loppuosan voi jakaa vapaasti. */
+function closedWeeks(){ if (!state.cf) return []; const out = []; for (let w = Math.max(state.cf, state.ss); w <= Math.min(state.ct || state.cf, state.se); w++) out.push(w); return out; }
+const isClosed = w => !!state.cf && w >= state.cf && w <= (state.ct || state.cf);
+const closedLabel = () => { const c = closedWeeks(); return c.length ? rangeLabel(c[0], c.length) : ''; };
+const freeLen = p => Math.max(0, p.len - closedWeeks().length);
+function splitOptions(len){ const o = [], min = closedWeeks().length >= state.minMain ? 1 : state.minMain; for (let m = len - 1; m >= Math.max(min, Math.ceil(len / 2)); m--) o.push(m); return o; }
+function segLens(p, sp){ const n = freeLen(p); return sp && splitOptions(n).includes(sp) ? [sp, n - sp] : [n]; }
+const wishOf = (p, k) => p.wishes[k] || {sp:0, s:[]};
+function validSegs(plan){
+  for (const [s, l] of plan){
+    if (!Number.isInteger(s) || s < state.ss || s + l - 1 > state.se) return false;
+    if (state.cf) for (let w = s; w < s + l; w++) if (isClosed(w)) return false;
+  }
+  return plan.length < 2 || !(plan[0][0] < plan[1][0] + plan[1][1] && plan[1][0] < plan[0][0] + plan[0][1]);
+}
+// Toive suunnitelmaksi, tai null jos se on puutteellinen
+function wishPlan(p, k){
+  const w = p.wishes[k]; if (!w || !freeLen(p)) return null;
+  const plan = segLens(p, w.sp).map((l, i) => [w.s[i], l]);
+  return validSegs(plan) ? plan : null;
+}
+// Toivelista ilman puutteellisia ja tuplia, järjestys säilyy
+function wl(p){
+  const out = [], seen = new Set();
+  for (let k = 0; k < MAX_WISHES; k++){ const pl = wishPlan(p, k); if (pl && !seen.has(String(pl))){ seen.add(String(pl)); out.push(pl); } }
+  return out;
+}
+// Kaikki mahdolliset suunnitelmat: yhtenäinen ja ne jaot, joita henkilö on itse toivonut
+function allPlans(p){
+  const so = splitOptions(freeLen(p)), out = [];
+  const shapes = new Set([0, ...p.wishes.filter(Boolean).map(w => so.includes(w.sp) ? w.sp : 0)]);
+  for (const sp of shapes){
+    const L = segLens(p, sp);
+    for (let a = state.ss; a + L[0] - 1 <= state.se; a++){
+      if (L.length === 1) out.push([[a, L[0]]]);
+      else for (let b = state.ss; b + L[1] - 1 <= state.se; b++){ const pl = [[a, L[0]], [b, L[1]]]; if (validSegs(pl)) out.push(pl); }
+    }
+  }
+  return out;
+}
+function planWeeks(plan){ const out = []; for (const [s, l] of plan) for (let w = s; w < s + l; w++) out.push(w); return out; }
+const planDist = (x, y) => x.reduce((d, [s], i) => d + Math.abs(s - (y[i] ?? y[0])[0]), 0) + (x.length !== y.length ? 1 : 0);
+const samePlan = (x, y) => !!x && !!y && String(x) === String(y);
+function plansOverlap(x, y){ const a = new Set(planWeeks(x)); return planWeeks(y).some(w => a.has(w)); }
+const planLabel = plan => plan.map(([s, l]) => rangeLabel(s, l)).join(' + ');
+const roleName = id => state.roles.find(r => r.id === id)?.name || 'Ei roolia';
+function inputsKey(){
+  const {year, ss, se, defMax, weekMax, comp, minMain, roles, people} = state;
+  return JSON.stringify({year, ss, se, defMax, weekMax, comp, minMain, roles, people:people.map(({note, ...p}) => p), h:state.history.filter(h => h.year < year)});
+}
+
+/* =========================================================================
+   Historia ja etusijapisteet (vuorottelu)
+   Pisteet = Σ (saatu sija − 1) × 0,5^(vuosia sitten − 1)
+   ========================================================================= */
+function compPoints(name){
+  let s = 0;
+  for (const h of state.history){
+    if (h.year >= state.year) continue;
+    const r = h.rows.find(x => norm(x.name) === norm(name));
+    if (r && r.level >= 1 && r.level <= 5) s += (r.level - 1) * Math.pow(DECAY, state.year - h.year - 1);
+  }
+  return Math.round(s * 10) / 10;
+}
+function compMap(){ const m = {}; state.people.forEach(p => m[p.id] = state.comp ? compPoints(p.name) : 0); return m; }
+
+/* =========================================================================
+   Rajoitteet
+   ========================================================================= */
+function makeCtx(){
+  const roleTot = {}, roleMax = {};
+  state.roles.forEach(r => { roleTot[r.id] = 0; roleMax[r.id] = r.max; });
+  state.people.forEach(p => { if (p.role in roleTot) roleTot[p.role]++; });
+  const c = {roleTot, roleMax, cap: w => state.weekMax[w] ?? state.defMax, abs:{}, rabs:{}};
+  occReset(c); return c;
+}
+function occReset(c){ c.abs = {}; c.rabs = {}; for (const r of state.roles) c.rabs[r.id] = {}; }
+function put(c, p, plan, d){
+  for (const w of planWeeks(plan)){
+    c.abs[w] = (c.abs[w] || 0) + d;
+    if (p.role in c.roleTot) c.rabs[p.role][w] = (c.rabs[p.role][w] || 0) + d;
+  }
+}
+// null = mahtuu, muuten syy: {w, why:'season'|'cap'|'role', ...}
+function check(c, p, plan){
+  if (!validSegs(plan)) return {w:plan[0][0], why:'season'};
+  for (const w of planWeeks(plan)){
+    if ((c.abs[w] || 0) + 1 > c.cap(w)) return {w, why:'cap', cap:c.cap(w)};
+    if (p.role in c.roleTot && (c.rabs[p.role][w] || 0) + 1 > c.roleMax[p.role]) return {w, why:'role', role:p.role, cap:c.roleMax[p.role]};
+  }
+  return null;
+}
+
+/* =========================================================================
+   Jakoalgoritmi
+   0. Sovitut (lukitut) lomat sijoitetaan ensin sellaisinaan.
+   1. Järjestys: etusijapisteet (suurin ensin), tasatilanteessa arvonta.
+   2. Jokainen saa vuorollaan parhaan toiveensa, joka vielä mahtuu.
+   3. Ne, joiden toiveet eivät mahdu, saavat lähimmän vapaan jakson 1. toiveesta.
+   4. Parannus: vaihdot, joissa joku paranee eikä kukaan huonone.
+   5. Arvonta toistetaan RUNS kertaa, paras tulos valitaan.
+   ========================================================================= */
+function fixedPlan(p){ const f = p.fixed; return f && f.length && validSegs(f) && f.reduce((x, [, l]) => x + l, 0) === freeLen(p) ? f : null; }
+function levelFor(p, plan){ const W = wl(p), i = W.findIndex(w => samePlan(w, plan)); return i >= 0 ? i + 1 : W.length ? 4 : 0; }
+function leftover(c, p, A){
+  const W = wl(p);
+  const target = W.length ? W[0] : [[Math.round((state.ss + state.se - freeLen(p) + 1) / 2), freeLen(p)]];
+  const plans = allPlans(p).sort((a, b) => planDist(a, target) - planDist(b, target) || a[0][0] - b[0][0]);
+  for (const s of plans) if (!check(c, p, s)){ put(c, p, s, 1); A[p.id] = {s, lv: W.length ? 4 : 0}; return; }
+  A[p.id] = {s:null, lv:5};
+}
+// Vaihtoehdot, joissa henkilö q ei huonone
+function qOptions(q, b){
+  const W = wl(q), o = [];
+  if (!W.length) return allPlans(q).filter(s => !samePlan(s, b.s)).sort((x, y) => planDist(x, b.s) - planDist(y, b.s)).slice(0, 80).map(s => ({s, lv:0}));
+  const lim = b.lv >= 4 ? W.length : b.lv;
+  for (let k = 0; k < lim; k++) if (!samePlan(W[k], b.s)) o.push({s:W[k], lv:k + 1});
+  return o;
+}
+function improve(c, P, A){
+  for (let it = 0; it < 10; it++){
+    let changed = false;
+    for (const p of P){
+      const a = A[p.id], W = wl(p);
+      if (!W.length || a.lv === 1) continue;
+      const better = W.slice(0, a.lv >= 4 ? W.length : a.lv - 1);
+      if (a.s !== null) put(c, p, a.s, -1);
+      let done = false;
+      for (let k = 0; k < better.length && !done; k++){
+        if (!check(c, p, better[k])){ put(c, p, better[k], 1); A[p.id] = {s:better[k], lv:k + 1}; done = true; }
+      }
+      for (let k = 0; k < better.length && !done; k++){
+        const t = better[k];
+        for (const q of P){
+          const b = A[q.id];
+          if (q === p || b.s === null || !plansOverlap(t, b.s)) continue;
+          put(c, q, b.s, -1);
+          if (!check(c, p, t)){
+            put(c, p, t, 1);
+            const ok = qOptions(q, b).find(o => !check(c, q, o.s));
+            if (ok){ put(c, q, ok.s, 1); A[q.id] = ok; A[p.id] = {s:t, lv:k + 1}; done = true; break; }
+            put(c, p, t, -1);
+          }
+          put(c, q, b.s, 1);
+        }
+      }
+      if (done) changed = true; else if (a.s !== null) put(c, p, a.s, 1);
+    }
+    if (!changed) break;
+  }
+}
+function score(P, A, hp){
+  let n5 = 0, n4 = 0, sq = 0, h = 0;
+  for (const p of P){ const lv = A[p.id].lv; if (lv === 5) n5++; else if (lv === 4) n4++; if (lv >= 1 && lv <= 5){ sq += (lv - 1) ** 2; h += hp[p.id] * (lv - 1); } }
+  return [n5, n4, sq, h];
+}
+const cmpScore = (a, b) => { for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return a[i] - b[i]; return 0; };
+function solve(seed){
+  const c = makeCtx(), hp = compMap(), rnd = mulberry32(seed), P = state.people;
+  // Jos koko loma on sulun aikana, jaettavaa ei ole
+  const closedOnly = P.filter(p => !freeLen(p)), rest = P.filter(p => freeLen(p));
+  const fixed = rest.filter(fixedPlan), free = rest.filter(p => !fixedPlan(p));
+  let best = null;
+  for (let r = 0; r < RUNS; r++){
+    const key = {}; P.forEach(p => key[p.id] = rnd());
+    const order = [...free].sort((a, b) => (wl(b).length > 0) - (wl(a).length > 0) || hp[b.id] - hp[a.id] || key[a.id] - key[b.id]);
+    occReset(c); const A = {};
+    for (const p of closedOnly) A[p.id] = {s:[], lv:6};
+    for (const p of fixed){ const f = fixedPlan(p); put(c, p, f, 1); A[p.id] = {s:f, lv:levelFor(p, f), fixed:true}; }
+    for (const p of order){ const W = wl(p); for (let k = 0; k < W.length; k++) if (!check(c, p, W[k])){ put(c, p, W[k], 1); A[p.id] = {s:W[k], lv:k + 1}; break; } }
+    for (const p of order) if (!A[p.id]) leftover(c, p, A);
+    improve(c, free, A);
+    for (const p of order) if (A[p.id].lv === 5) leftover(c, p, A);
+    const sc = score(P, A, hp);
+    if (!best || cmpScore(sc, best.sc) < 0) best = {sc, A, order:order.map(p => p.id)};
+  }
+  return best;
+}
+function occFrom(A){ const c = makeCtx(); for (const p of state.people){ const a = A[p.id]; if (a && a.s !== null) put(c, p, a.s, 1); } return c; }
+function whyText(f){
+  if (!f) return 'olisi mahtunut, laske jako uudelleen';
+  if (f.why === 'season') return 'jakso ei ole lomakaudella';
+  if (f.why === 'cap') return `viikko ${f.w} oli jo täynnä (${f.cap}/${f.cap} lomalla)`;
+  return `viikko ${f.w} oli jo täynnä: ${roleName(f.role).toLowerCase()} ${f.cap}/${f.cap} lomalla`;
+}
+function explain(c, p, A){
+  const a = A[p.id], W = wl(p);
+  if (a.lv === 6) return 'Koko loma on yhteisen sulun aikana.';
+  const next = state.comp && a.lv > 1 ? ` Ensi vuonna saat etusijaa (+${Math.min(a.lv, 5) - 1}).` : '';
+  if (a.fixed) return (a.lv >= 1 && a.lv <= 3 ? `Sovittu loma (${a.lv}. toive).` : 'Sovittu loma, ei vastaa toiveita.') + next;
+  if (a.lv === 1) return '1. toive toteutui.';
+  if (a.lv === 0) return 'Ei toiveita, sijoitettu vapaaseen kohtaan.';
+  if (a.s !== null) put(c, p, a.s, -1);
+  const out = [];
+  for (let k = 0; k < Math.min(a.lv >= 4 ? W.length : a.lv - 1, W.length); k++) out.push(`${k + 1}. toive ei mahtunut: ${whyText(check(c, p, W[k]))}.`);
+  if (a.s !== null) put(c, p, a.s, 1);
+  return out.join(' ') + next;
+}
+
+/* =========================================================================
+   Selitykset: miksi kukin sai lomansa
+   Kaikki selitykset lasketaan lopullisesta jaosta, joten ne pitävät paikkansa
+   myös käsin tehtyjen muutosten jälkeen.
+   ========================================================================= */
+const fmtNum = x => String(Math.round(x * 10) / 10).replace('.', ',');
+const shortName = n => { const s = String(n || '').trim().split(/\s+/); return s.length > 1 ? `${s[0]} ${s[s.length - 1][0]}.` : s[0] || 'Nimetön'; };
+const hasWishes = id => { const p = findP(id); return !!p && wl(p).length > 0; };
+const notice = (kind, icon, html) => `<div class="notice ${kind} has-ic">${I(icon)}<div>${html}</div></div>`;
+// Mistä henkilön etusija tulee: vuosi kerrallaan
+function compBreakdown(name){
+  const parts = [];
+  for (const h of [...state.history].sort((a, b) => b.year - a.year)){
+    if (h.year >= state.year) continue;
+    const r = h.rows.find(x => norm(x.name) === norm(name));
+    if (!r || r.level < 2 || r.level > 5) continue;
+    const wgt = Math.pow(DECAY, state.year - h.year - 1);
+    parts.push(`${h.year}: ${LEVEL_LABEL[r.level].toLowerCase()} +${fmtNum((r.level - 1) * wgt)}${wgt < 1 ? ` (paino ${fmtNum(wgt)})` : ''}`);
+  }
+  return parts.join(', ');
+}
+// Miksi jakso ei mahdu: mikä viikko on täynnä ja keitä siellä on lomalla
+function blockText(f, A, p){
+  if (!f) return 'Mahtuisi nyt, koska jakoa on muutettu. Laske jako uudelleen.';
+  if (f.why === 'season') return 'Jakso ei ole kokonaan lomakaudella.';
+  const who = state.people.filter(q => q !== p && A[q.id]?.s && planWeeks(A[q.id].s).includes(f.w) && (f.why === 'cap' || q.role === f.role)).map(q => esc(shortName(q.name)));
+  const names = who.join(', '), list = who.length ? ` <span class="muted">Lomalla: ${names}${names.endsWith('.') ? '' : '.'}</span>` : '';
+  if (f.why === 'cap') return `Viikolla ${f.w} on jo ${f.cap}/${f.cap} lomalla.${list}`;
+  return `Viikolla ${f.w} on jo ${f.cap}/${f.cap} roolista ${esc(roleName(f.role).toLowerCase())} lomalla, jotta osaamista jää töihin.${list}`;
+}
+// Päätöksen vaiheet yhdelle henkilölle aikajanana
+function storyHTML(p, A){
+  const a = A[p.id], W = wl(p), r = state.result, c = occFrom(A), hp = compMap(), steps = [];
+  const add = (cls, icon, html) => steps.push(`<li><span class="dot ${cls}">${I(icon)}</span><div>${html}</div></li>`);
+  if (!a) return '';
+  if (a.lv === 6){ add('info', 'factory', `<b>Koko loma on yhteisen sulun aikana</b> (${closedLabel()}). Jaettavaa ei ole.`); return `<ol class="story">${steps.join('')}</ol>`; }
+  if (!state.comp) add('', 'scale', '<b>Vuorottelu ei ole käytössä.</b> Kaikilla on sama etusija.');
+  else {
+    const br = compBreakdown(p.name);
+    add(hp[p.id] ? 'info' : '', 'scale', hp[p.id] ? `<b>Etusija ${fmtNum(hp[p.id])}.</b> Kertynyt aiemmista kesistä: ${br}.` : `<b>Etusija 0.</b> ${state.history.length ? 'Aiempina kesinä sait 1. toiveesi tai et ollut mukana.' : 'Aiempia kesiä ei ole tallennettu.'}`);
+  }
+  if (a.fixed){
+    add('info', 'lock', '<b>Sovittu loma.</b> Loma oli lukittu etukäteen tai siirretty käsin, joten se sijoitettiin ensin sellaisenaan.');
+    add(a.lv >= 1 && a.lv <= 3 ? 'ok' : '', 'check', a.lv >= 1 && a.lv <= 3 ? `<b>Vastaa ${a.lv}. toivettasi.</b>` : '<b>Ei vastaa annettuja toiveita.</b>');
+  } else {
+    if (r.order){
+      const pos = r.order.indexOf(p.id);
+      const ties = r.order.filter(id => id !== p.id && hasWishes(id) === hasWishes(p.id) && Math.abs((hp[id] || 0) - (hp[p.id] || 0)) < 1e-9).length;
+      if (pos >= 0) add('', 'list', `<b>Vuoro ${pos + 1}. / ${r.order.length}.</b> ${ties ? `Sama etusija oli ${ties} muulla, joten heidän järjestyksensä arvottiin.` : 'Järjestys määräytyi etusijasta.'}`);
+    }
+    if (!W.length) add('', 'calendar', '<b>Ei toiveita.</b> Loma sijoitettiin kohtaan, jossa oli tilaa, mahdollisimman lähelle kauden keskikohtaa.');
+    else {
+      if (a.s) put(c, p, a.s, -1);
+      const upto = a.lv >= 4 ? W.length : a.lv;
+      for (let k = 0; k < upto; k++){
+        if (samePlan(W[k], a.s)) add('ok', 'check', `<b>${k + 1}. toive ${planLabel(W[k])}: mahtui.</b> ${k ? 'Sait tämän, koska paremmat toiveet eivät mahtuneet.' : 'Sait ensimmäisen toiveesi.'}`);
+        else add('no', 'x', `<b>${k + 1}. toive ${planLabel(W[k])}: ei mahtunut.</b> ${blockText(check(c, p, W[k]), A, p)}`);
+      }
+      if (a.s) put(c, p, a.s, 1);
+      if (a.lv === 4) add('warn', 'move', `<b>Lähin vapaa jakso: ${planLabel(a.s)}.</b> Mikään toive ei mahtunut, joten loma sijoitettiin mahdollisimman lähelle 1. toivetta.`);
+      if (a.lv === 5) add('no', 'alert', '<b>Lomaa ei voitu sijoittaa kaudelle.</b> Lomapaikat eivät riitä. Lisää lomapaikkoja tai pidennä lomakautta.');
+      if (a.lv > 1 && a.lv < 5) add('', 'shuffle', 'Myös vaihtoja kokeiltiin: ketään paremman toiveesi viikoilla lomailevaa ei voitu siirtää ilman, että hänen oma tuloksensa huononisi.');
+    }
+  }
+  if (state.comp && a.lv > 1 && a.lv <= 5) add('info', 'trending', `<b>Ensi kesänä etusija kasvaa +${a.lv - 1}.</b> Joustaminen nyt nostaa vuoroa ensi vuonna.`);
+  return `<ol class="story">${steps.join('')}</ol>`;
+}
+// Mahtuuko kaikki: tarvittavat lomaviikot verrattuna kauden lomapaikkoihin
+function capacity(){
+  const open = seasonWeeks().filter(w => !isClosed(w)), P = state.people.filter(p => freeLen(p));
+  const need = P.reduce((s, p) => s + freeLen(p), 0);
+  const noRole = state.people.filter(p => !state.roles.some(r => r.id === p.role)).length;
+  const roleRoom = state.roles.length ? state.roles.reduce((s, r) => s + Math.min(r.max, state.people.filter(p => p.role === r.id).length), 0) + noRole : Infinity;
+  const have = open.reduce((s, w) => s + Math.min(state.weekMax[w] ?? state.defMax, roleRoom), 0);
+  const roles = state.roles.map(r => { const ps = P.filter(p => p.role === r.id); return {name:r.name, need:ps.reduce((s, p) => s + freeLen(p), 0), have:r.max * open.length}; }).filter(x => x.need);
+  const ratio = Math.max(have ? need / have : (need ? Infinity : 0), ...roles.map(x => x.have ? x.need / x.have : Infinity));
+  return {need, have, roles, ratio, lvl: ratio > 1 ? 'err' : ratio > 0.85 ? 'warn' : 'ok'};
+}
+function capacityHTML(){
+  if (!state.people.length) return '<p class="muted small" style="margin:0">Tarkistus näkyy, kun henkilöt on lisätty.</p>';
+  const c = capacity(), tight = c.roles.filter(x => x.need > x.have);
+  const label = {ok:'Mahtuu hyvin', warn:'Tiukka', err:'Ei mahdu'}[c.lvl];
+  const txt = c.lvl === 'err' ? (tight.length ? `Roolin ${tight.map(x => `"${esc(x.name.toLowerCase())}"`).join(' ja ')} lomat eivät mahdu kaudelle. Lisää roolin lomapaikkoja tai pidennä lomakautta.` : 'Kaikkien lomat eivät mahdu kaudelle. Lisää lomapaikkoja tai pidennä lomakautta.')
+    : c.lvl === 'warn' ? 'Lomat mahtuvat, mutta lähes kaikki lomapaikat tarvitaan. Kaikki eivät voi saada toivettaan.'
+    : 'Lomapaikkoja on riittävästi. Toiveiden toteutuminen riippuu siitä, kuinka moni toivoo samoja viikkoja.';
+  return `<div class="row" style="justify-content:space-between"><div class="capnum">${c.need}<small>/ ${c.have} lomaviikkoa</small></div><span class="capstate ${c.lvl}">${I(c.lvl === 'ok' ? 'check-circle' : 'alert')} ${label}</span></div>
+    <div class="capbar ${c.lvl}"><i style="width:${Math.min(100, Math.round(c.ratio * 100))}%"></i></div>
+    <p class="small muted" style="margin:0">${txt}</p>
+    ${c.roles.length ? `<ul class="caproles">${c.roles.map(x => `<li>${esc(x.name)}: ${x.need} / ${x.have} lomaviikkoa${x.need > x.have ? ' <b style="color:var(--danger)">ei mahdu</b>' : ''}</li>`).join('')}</ul>` : ''}`;
+}
+// Viikot, joille 1. toiveita on enemmän kuin lomapaikkoja
+function hotWeeks(){
+  const dem = {};
+  for (const p of state.people){ const f = fixedPlan(p) || wl(p)[0]; if (f) for (const w of planWeeks(f)) dem[w] = (dem[w] || 0) + 1; }
+  return Object.entries(dem).map(([w, n]) => ({w:+w, n, cap: state.weekMax[w] ?? state.defMax})).filter(x => x.n > x.cap).sort((a, b) => (b.n - b.cap) - (a.n - a.cap) || a.w - b.w);
+}
+// Jaon vaiheet tälle jaolle, ja vuorojärjestys
+function decisionHTML(A){
+  const r = state.result, hp = compMap(), P = state.people.filter(p => A[p.id]);
+  const nFixed = P.filter(p => A[p.id].fixed).length, cnt = l => P.filter(p => A[p.id].lv === l).length;
+  const steps = [
+    ['lock', 'Sovitut lomat ensin', nFixed ? `${nFixed} lukittua lomaa sijoitettiin sellaisinaan.` : 'Lukittuja lomia ei ollut.'],
+    ['scale', 'Vuorojärjestys', state.comp ? 'Suurin etusija ensin. Etusijaa saa, jos on aiempina kesinä joustanut. Tasatilanteet arvotaan.' : 'Vuorottelu on pois päältä, joten järjestys arvotaan.'],
+    ['users', 'Toiveet vuorollaan', 'Jokainen saa vuorollaan parhaan toiveensa, joka vielä mahtuu lomapaikkoihin.'],
+    ['move', 'Jos mikään ei mahdu', cnt(4) ? `${cnt(4)} sai lähimmän vapaan jakson 1. toiveestaan.` : 'Kaikille mahtui jokin toive.'],
+    ['shuffle', 'Vaihdot', 'Lopuksi tehdään vaihdot, joissa joku pääsee parempaan toiveeseen eikä kukaan huonone.'],
+    ['dice', `Paras ${RUNS} arvonnasta`, `Arvonta toistetaan ${RUNS} kertaa. Valitaan jako, jossa vähiten jää ilman toivettaan ja huonoimmat tulokset ovat lievimpiä.`],
+  ];
+  const order = (r.order || []).map((id, i) => {
+    const p = findP(id); if (!p) return '';
+    const lot = r.order.some(q => q !== id && hasWishes(q) === hasWishes(id) && Math.abs((hp[q] || 0) - (hp[id] || 0)) < 1e-9);
+    return `<span class="chip${lot ? ' lot' : ''}" title="${esc(p.name)}: etusija ${fmtNum(hp[id] || 0)}${lot ? ', arvottu' : ''}"><span class="n">${i + 1}</span>${esc(shortName(p.name))}${hp[id] ? ` <span class="comp">${fmtNum(hp[id])}</span>` : ''}</span>`;
+  }).join('');
+  return `<div class="card"><h3>${I('lightbulb')} Miten tähän jakoon päädyttiin</h3>
+    <p class="muted small" style="margin:0">Sama sääntö kaikille, samassa järjestyksessä. Klikkaa kenen tahansa nimeä, niin näet hänen kohdallaan jokaisen vaiheen.</p>
+    <ol class="pipe">${steps.map(([ic, t, d], i) => `<li><span class="ic">${I(ic)}</span><b>${i + 1}. ${t}</b><p>${d}</p></li>`).join('')}</ol>
+    ${order ? `<details class="box"><summary>${I('list')} Vuorojärjestys tässä jaossa</summary>
+      <p class="muted small" style="margin:0">Numero on vuoro. Keltainen luku on etusija. Keltaisella numerolla merkittyjen järjestys arvottiin, koska heillä oli sama etusija. Sovitut lomat ja henkilöt, joiden koko loma on sulun aikana, eivät ole jonossa.</p>
+      <div class="order">${order}</div></details>` : ''}
+    <p class="small muted" style="margin:10px 0 0">${I('shield')} Laskenta ei koskaan ylitä lomapaikkoja. Jos lomia siirretään käsin niin, että raja ylittyy, puute näytetään punaisella.</p></div>`;
+}
+
+/* =========================================================================
+   Näkymät
+   ========================================================================= */
+let currentTab = 'settings', heroHidden = false;
+const THEME_KEY = 'lomajako.theme';
+let theme = 'auto';
+try { theme = localStorage.getItem(THEME_KEY) || 'auto'; } catch {}
+const effectiveTheme = () => theme === 'auto' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme;
+function applyTheme(){
+  if (theme === 'auto') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = theme;
+  const b = $('#themeBtn'), dark = effectiveTheme() === 'dark';
+  if (b){ b.innerHTML = I(dark ? 'sun' : 'moon'); b.title = dark ? 'Vaalea teema' : 'Tumma teema'; }
+}
+function showTab(t){
+  currentTab = t;
+  $$('.tab').forEach(s => s.classList.toggle('active', s.id === 'tab-' + t));
+  try { localStorage.setItem(TAB_KEY, t); } catch {}
+  render(); window.scrollTo({top:0, behavior:'instant'});
+}
+function render(){
+  $('#yearIn').value = state.year;
+  renderNav();
+  ({settings:renderSettings, people:renderPeople, result:renderResult, history:renderHistory, help:renderHelp})[currentTab]();
+}
+function renderNav(){
+  const n = state.people.length, miss = state.people.filter(p => freeLen(p) && !fixedPlan(p) && !wl(p).length).length;
+  const r = state.result, stale = r && r.key !== inputsKey();
+  const st = {
+    settings:{t:'Asetukset', s:`${state.defMax} lomapaikkaa · vk ${state.ss}–${state.se}`, i:'sliders', done:n > 0},
+    people:{t:'Henkilöt ja toiveet', s:n ? `${n} henkilöä · toiveet ${n - miss}/${n}` : 'Ei vielä henkilöitä', i:'users', done:n > 0 && !miss},
+    result:{t:'Lomajako', s:!r ? 'Ei laskettu' : stale ? 'Laske uudelleen' : 'Laskettu ' + String(r.at).split(' ')[0], i:'calendar', done:r && !stale, warn:stale},
+    history:{t:'Historia', s:state.history.length ? `${state.history.length} kesää tallennettu` : 'Ei tallennettuja kesiä', i:'history'},
+  };
+  $('#tabs').innerHTML = Object.entries(st).map(([k, x], i) => `<button class="step${currentTab === k ? ' active' : ''}${x.done ? ' done' : ''}${x.warn ? ' warn' : ''}" data-act="tab" data-tab="${k}"${currentTab === k ? ' aria-current="page"' : ''}><span class="ic">${I(x.i)}</span><span><span class="t">${x.t}</span><span class="s">${esc(x.s)}</span></span></button>${i < 3 ? `<span class="arrow">${I('chevron-right')}</span>` : ''}`).join('')
+    + `<span class="grow"></span><button class="step${currentTab === 'help' ? ' active' : ''}" data-act="tab" data-tab="help"><span class="ic">${I('book')}</span><span><span class="t">Näin se toimii</span><span class="s">Ohje ja perusteet</span></span></button>`;
+}
+const nextBar = (text, tab, label) => `<div class="nextbar no-print"><span class="muted">${text}</span><button class="btn primary" data-act="tab" data-tab="${tab}">${label} ${I('arrow-right')}</button></div>`;
+function heroArt(){
+  const rows = [[1, 4, 'l1'], [5, 4, 'l1'], [0, 3, 'l2'], [7, 4, 'l1'], [3, 4, 'l3'], [8, 4, 'l1'], [4, 3, 'l2']];
+  return `<div class="art"><div class="art-head">${[...Array(12)].map((_, i) => `<span>${24 + i}</span>`).join('')}</div>
+    ${rows.map(([s, l, c]) => `<div class="art-row"><span class="art-name"></span><span class="art-track"><span class="art-bar ${c}" style="left:${s / 12 * 100}%;width:${l / 12 * 100}%"></span></span></div>`).join('')}
+    <div class="art-foot"><span><i class="bg1"></i>1. toive</span><span><i class="bg2"></i>2. toive</span><span><i class="bg3"></i>3. toive</span></div></div>`;
+}
+function welcome(){
+  return `<section class="hero">
+    <div><span class="eyebrow">${I('sun')} Kesä ${state.year}</span>
+      <h2>Reilu kesälomajako muutamassa minuutissa</h2>
+      <p>Lomajako jakaa kesälomat toiveiden mukaan niin, että töissä on joka viikko tarpeeksi väkeä. Jokainen näkee, mitä sai ja miksi, ja hyvät lomaviikot vuorottelevat vuodesta toiseen.</p>
+      <div class="row"><button class="btn primary lg" data-act="demo">${I('sparkles')} Kokeile esimerkillä</button><button class="btn lg" data-act="startOwn">${I('user-plus')} Aloita omilla tiedoilla</button></div>
+      <p class="hero-note muted">${I('shield')} Tiedot pysyvät tällä koneella. Ei kirjautumista, ei asennusta.</p></div>
+    <div class="hero-art" aria-hidden="true">${heroArt()}</div>
+  </section>
+  <div class="how3">
+    <div class="how"><div class="ic-box">${I('sliders')}</div><b>1. Aseta säännöt</b><p>Montako voi olla lomalla samaan aikaan, yhteensä ja rooleittain.</p></div>
+    <div class="how"><div class="ic-box">${I('users')}</div><b>2. Kerää toiveet</b><p>Jokainen antaa kolme toivetta päivämäärinä: paperilla, Excelillä tai Formsilla.</p></div>
+    <div class="how"><div class="ic-box">${I('calendar')}</div><b>3. Laske ja jaa</b><p>Valmis jako, perustelu jokaiselle, seinälista ja lomailmoitukset.</p></div>
+  </div>`;
+}
+const weekOpts = (from, to, sel) => { let h = ''; for (let w = from; w <= to; w++) h += `<option value="${w}"${w === sel ? ' selected' : ''}>vk ${w} (ma ${dm(weekMonday(state.year, w))})</option>`; return h; };
+
+const stepper = (f, v, attrs = '', min = 0) => `<div class="stepper"><button type="button" data-act="bump" data-d="-1" aria-label="Vähennä">−</button><input type="number" min="${min}" max="99" value="${v}" data-f="${f}"${attrs}><button type="button" data-act="bump" data-d="1" aria-label="Lisää">+</button></div>`;
+function renderSettings(){
+  const cnt = {}; state.people.forEach(p => cnt[p.role] = (cnt[p.role] || 0) + 1);
+  let weeks = '';
+  for (let w = state.ss; w <= state.se; w++){
+    const v = state.weekMax[w] ?? state.defMax;
+    weeks += isClosed(w) ? `<div class="wk closed" title="Yhteinen sulku: kaikki lomalla"><b>vk ${w}</b><span>${dm(weekMonday(state.year, w))}</span><span><b>Sulku</b></span></div>`
+      : `<label class="wk${w in state.weekMax ? ' changed' : ''}"><b>vk ${w}</b><span>${dm(weekMonday(state.year, w))}</span><input type="number" min="0" max="99" value="${v}" data-f="wk" data-w="${w}"></label>`;
+  }
+  // Lomapaikat: roolikohtainen raja ja koko yksikön raja (yhteensä)
+  const noRole = state.people.filter(p => !state.roles.some(r => r.id === p.role)).length;
+  const sumMax = state.roles.reduce((s, r) => s + Math.min(r.max, cnt[r.id] || 0), 0);
+  const tight = state.people.length && !noRole && state.roles.length && sumMax < state.defMax;
+  $('#tab-settings').innerHTML = `${state.people.length || heroHidden ? '' : welcome()}
+  <div class="section-head"><div><h2>Asetukset</h2><p class="muted">Jaon säännöt: montako voi olla lomalla samaan aikaan ja milloin lomat pidetään.</p></div></div>
+  <div class="grid-wide">
+    <div class="card"><h3>${I('users')} Lomapaikat viikossa ${tip('Lomapaikka tarkoittaa, montako henkilöä voi olla lomalla samalla viikolla. Yhteensä-raja koskee koko yksikköä. Roolin raja varmistaa, että jokaista osaamista jää töihin.')}</h3>
+      <p class="muted small">Montako voi olla lomalla samaan aikaan. Roolikohtainen raja varmistaa, että jokaista osaamista jää paikalle.</p>
+      <div class="table-wrap"><table class="tbl places"><thead><tr><th>Rooli</th><th class="num">Henkilöitä</th><th class="num">Lomalla enintään</th><th class="num">Töissä vähintään</th><th></th></tr></thead><tbody>
+      ${state.roles.map(r => `<tr><td><input class="in" value="${esc(r.name)}" data-f="roleName" data-id="${r.id}" aria-label="Roolin nimi"></td>
+        <td class="num">${cnt[r.id] || 0}</td>
+        <td class="num">${stepper('roleMax', r.max, ` data-id="${r.id}"`)}</td>
+        <td class="num muted">${Math.max(0, (cnt[r.id] || 0) - r.max)}</td>
+        <td><button class="icon-btn del" title="Poista rooli" data-act="delRole" data-id="${r.id}">${I('trash')}</button></td></tr>
+        ${r.max === 0 && cnt[r.id] ? `<tr><td colspan="5">${notice('warn', 'alert', 'Lomalla enintään on 0, joten kukaan tästä roolista ei voi lomailla.')}</td></tr>` : ''}`).join('')}
+      ${noRole ? `<tr><td class="muted">Ei roolia</td><td class="num muted">${noRole}</td><td class="num muted small" colspan="2">vain yhteensä-raja</td><td></td></tr>` : ''}
+      <tr class="total"><td>Yhteensä</td><td class="num">${state.people.length}</td>
+        <td class="num">${stepper('defMax', state.defMax, '', 1)}</td>
+        <td class="num muted">${Math.max(0, state.people.length - state.defMax)}</td><td></td></tr>
+      </tbody></table></div>
+      ${tight ? `<div style="margin-top:12px">${notice('info', 'info', `Roolien lomapaikkoja on yhteensä ${sumMax}, joten käytännössä lomalle mahtuu viikossa enintään ${sumMax}, vaikka yhteensä-raja on ${state.defMax}.`)}</div>` : ''}
+      <div class="row" style="margin-top:12px"><button class="btn sm" data-act="addRole">${I('plus')} Lisää rooli</button><span class="muted small">Esimerkiksi sairaanhoitaja, lähihoitaja tai vuoroesihenkilö.</span></div>
+    </div>
+    <div class="card"><h3>${I('target')} Mahtuuko kaikki? ${tip('Vasemmalla luku on lomaviikot, jotka tarvitaan (kaikkien lomat yhteensä). Oikealla luku on lomapaikat koko kaudella (lomapaikat viikossa × viikot). Jos tarvittavia on enemmän, kaikki eivät mahdu lomalle.')}</h3>${capacityHTML()}</div>
+  </div>
+  <div class="grid-2">
+    <div class="card"><h3>${I('calendar')} Lomakausi ja säännöt</h3>
+      <div class="fields-2">
+        <label class="field"><span>Alkaa</span><select data-f="ss">${weekOpts(14, 30, state.ss)}</select></label>
+        <label class="field"><span>Päättyy</span><select data-f="se">${weekOpts(30, 44, state.se)}</select></label>
+      </div>
+      <p class="small muted" style="margin:-8px 0 16px">Vuosilomalain kesälomakausi on 2.5.–30.9.</p>
+      <div class="field"><span>Yhteinen sulku ${tip('Esimerkiksi tehdasloma: viikot, jolloin koko yksikkö on kiinni ja kaikki ovat lomalla. Sulku lasketaan osaksi jokaisen kesälomaa.')}</span>
+        <div class="row"><select data-f="cf"><option value="0">Ei sulkua</option>${weekOpts(state.ss, state.se, state.cf)}</select>
+        ${state.cf ? `<span>–</span><select data-f="ct">${weekOpts(state.cf, state.se, state.ct || state.cf).replace(/ \(ma [^)]*\)/g, '')}</select>` : ''}</div>
+        <small>${state.cf ? `Yksikkö on suljettu ${closedLabel()}. Kaikki ovat silloin lomalla, ja sulku lasketaan osaksi jokaisen kesälomaa. Toiveet koskevat vain loppuosaa.` : 'Viikot, jolloin koko yksikkö on kiinni ja kaikki ovat lomalla.'}</small></div>
+      <label class="field"><span>Jaetun loman pidempi osa vähintään ${tip('Vuosilomalain mukaan kesälomasta 12 arkipäivää (2 viikkoa) annetaan yhtenäisenä. Työehtosopimus voi poiketa tästä.')}</span><select data-f="minMain">${[1, 2, 3].map(n => `<option value="${n}"${n === state.minMain ? ' selected' : ''}>${n} vk</option>`).join('')}</select></label>
+      <label class="switch"><input type="checkbox" data-f="comp"${state.comp ? ' checked' : ''}><span><b>Vuorottelu vuodesta toiseen</b><small>Ne, jotka joustivat aiempina kesinä, ovat tänä vuonna vuorossa ensin.</small></span></label>
+    </div>
+    <div class="card"><h3>${I('file-text')} Tiedote henkilöstölle</h3>
+      <label class="field"><span>Yksikkö</span><input data-f="unit" value="${esc(state.unit)}" placeholder="Esimerkiksi Osasto 5B" style="width:100%"></label>
+      <label class="field"><span>Toiveet viimeistään</span><input type="date" data-f="deadline" value="${esc(state.deadline)}"></label>
+      <button class="btn" data-act="printRules">${I('printer')} Tulosta pelisäännöt ja toivelomake</button>
+      <small class="muted" style="display:block;margin-top:8px">Kaksi sivua: pelisäännöt selkokielellä ja paperinen toivelomake. Tiedot tulevat näistä asetuksista.</small>
+    </div>
+  </div>
+  <div class="card"><h3>${I('sliders')} Poikkeusviikot ${tip('Muuta yksittäisen viikon yhteensä-rajaa. Roolikohtaiset rajat pysyvät samoina.')}</h3>
+    <p class="muted small">Esimerkiksi juhannusviikolla vähemmän lomapaikkoja, tai heinäkuussa enemmän, jos sijaisia on saatavilla. Muutetut viikot näkyvät sinisinä.</p>
+    <div class="weeks">${weeks}</div></div>
+  ${nextBar(state.people.length ? 'Säännöt kunnossa? Seuraavaksi henkilöt ja toiveet.' : 'Seuraavaksi lisää henkilöt ja heidän toiveensa.', 'people', 'Henkilöt ja toiveet')}`;
+}
+
+const MONTHS = ['tammi','helmi','maalis','huhti','touko','kesä','heinä','elo','syys','loka','marras','joulu'];
+const LOCK = I('lock', 'lock');
+let selId = null, showImport = false, focusName = false;
+function seasonWeeks(){ const W = []; for (let w = state.ss; w <= state.se; w++) W.push(w); return W; }
+
+let pSearch = '';
+function renderPeople(){
+  const el = $('#tab-people'), keep = $('.plist', el)?.scrollTop || 0;
+  const hp = compMap(), W = seasonWeeks(), q = norm(pSearch);
+  if (!state.people.some(p => p.id === selId)) selId = state.people[0]?.id || null;
+  const list = state.people.map(p => {
+    // Lukitulla henkilöllä minikalenteri näyttää vain sovitun loman
+    const fp = fixedPlan(p), fset = new Set(fp ? planWeeks(fp) : []);
+    const sets = fp ? [fset, new Set(), new Set()] : [0, 1, 2].map(k => { const pl = wishPlan(p, k); return new Set(pl ? planWeeks(pl) : []); });
+    const n = wl(p).length, none = freeLen(p) && !fp && !n, full = !freeLen(p) || fp || n === MAX_WISHES;
+    const status = none ? `<span class="st-warn" title="Toiveet puuttuvat">${I('alert')}</span>` : full ? `<span class="st-ok" title="Valmis">${I('check-circle')}</span>` : `<span class="st-warn" title="${n}/${MAX_WISHES} toivetta">${I('circle-dashed')}</span>`;
+    return `<button class="pcard${p.id === selId ? ' sel' : ''}" data-act="selP" data-id="${p.id}" data-name="${esc(norm(p.name))}"${q && !norm(p.name).includes(q) ? ' hidden' : ''}>
+      ${avatar(p.name)}
+      <div class="pc-top"><b>${esc(p.name) || '<span class="muted">Nimetön</span>'}</b><span class="row" style="gap:5px;flex-wrap:nowrap">${fp ? LOCK : ''}${hp[p.id] ? `<span class="comp" title="Etusija">${fmtNum(hp[p.id])}</span>` : ''}${status}</span></div>
+      <div class="pc-sub">${esc(roleName(p.role))} · ${p.len} vk · ${!freeLen(p) ? 'vain sulku' : fp ? 'sovittu loma' : n === MAX_WISHES ? `${n} toivetta` : `<span style="color:var(--warn)">${n}/${MAX_WISHES} toivetta</span>`}${p.note ? ' · <span class="notechip">lisätieto</span>' : ''}</div>
+      <div class="mini">${W.map(w => `<i class="${sets[0].has(w) ? 'm1' : sets[1].has(w) ? 'm2' : sets[2].has(w) ? 'm3' : ''}"></i>`).join('')}</div></button>`;
+  }).join('');
+  const sel = state.people.find(p => p.id === selId), nTot = state.people.length;
+  const missing = state.people.filter(p => freeLen(p) && !fixedPlan(p) && !wl(p).length), ready = nTot - missing.length;
+  const hot = hotWeeks().slice(0, 3), ir = importReport;
+  const progress = nTot ? `<div class="card progress-card"><div>
+      <div class="row" style="justify-content:space-between"><b>${I('clipboard')} Toiveet annettu</b><span class="muted small"><b style="color:var(--text)">${ready}</b> / ${nTot}</span></div>
+      <div class="prog"><i style="width:${Math.round(ready / nTot * 100)}%"></i></div>
+      ${missing.length ? `<p class="small" style="margin:8px 0 0;color:var(--warn)">Puuttuu: ${missing.map(p => esc(p.name || 'Nimetön')).join(', ')}. Ilman toiveita loma sijoitetaan siihen, mihin mahtuu.</p>` : '<p class="small muted" style="margin:8px 0 0">Kaikilla on toiveet. Voit laskea jaon.</p>'}</div>
+    ${hot.length ? `<div class="pg-hot"><b class="small">${I('flame')} Kysytyimmät viikot</b>${hot.map(h => `<span class="small"><b>vk ${h.w}</b>: ${h.n} toivoo, mahtuu ${h.cap}</span>`).join('')}<span class="muted small">1. toiveiden mukaan</span></div>` : ''}</div>` : '';
+  el.innerHTML = `<div class="section-head"><div><h2>Henkilöt ja toiveet</h2><p class="muted">Jokainen antaa kolme vaihtoehtoista lomaa. Tuo ne Excelistä tai paperilta, tai klikkaa ne suoraan kalenteriin.</p></div>
+    <div class="toolbar"><button class="btn" data-act="printRules">${I('printer')} Toivelomake</button><button class="btn" data-act="toggleImport">${I('file-spreadsheet')} Tuo Excelistä</button><button class="btn primary" data-act="addPerson">${I('user-plus')} Lisää henkilö</button></div></div>
+  ${showImport ? importHTML() : ''}
+  ${ir ? notice(ir.issues.length ? 'warn' : 'info', ir.issues.length ? 'alert' : 'check-circle', `<div class="row" style="justify-content:space-between;flex-wrap:nowrap"><b>Tuotu: ${ir.added} uutta, ${ir.updated} päivitetty.${ir.issues.length ? ` Tarkista ${ir.issues.length} kohtaa:` : ' Kaikki toiveet tulkittiin.'}</b><button class="icon-btn" data-act="closeReport" title="Sulje">${I('x')}</button></div>${ir.issues.length ? `<ul>${ir.issues.map(i => `<li>${esc(i)}</li>`).join('')}</ul>` : ''}`) : ''}
+  ${progress}
+  ${nTot ? `<div class="pgrid">
+    <div class="card plist-card">${nTot > 6 ? `<label class="psearch">${I('search')}<input id="pSearch" type="search" placeholder="Hae nimellä" value="${esc(pSearch)}" aria-label="Hae henkilöä"></label>` : ''}<div class="plist">${list}</div></div>
+    <div class="card">${sel ? editorHTML(sel, W) : ''}</div>
+  </div>
+  ${nextBar(missing.length ? `${missing.length} henkilöltä puuttuu toiveet. Voit silti laskea jaon.` : 'Kaikki toiveet kunnossa.', 'result', 'Laske lomajako')}`
+  : `<div class="card empty"><div class="ic-box">${I('users')}</div><h3>Ei vielä henkilöitä</h3><p class="muted">Lisää henkilöt yksitellen tai tuo nimet ja toiveet Excelistä. Pelkkä nimilista käy myös.</p>
+    <div class="row" style="justify-content:center"><button class="btn primary" data-act="addPerson">${I('user-plus')} Lisää henkilö</button><button class="btn" data-act="toggleImport">${I('file-spreadsheet')} Tuo Excelistä</button><button class="btn" data-act="demo">${I('sparkles')} Kokeile esimerkillä</button></div></div>`}`;
+  const pl = $('.plist', el); if (pl) pl.scrollTop = keep;
+  $('.pcard.sel', el)?.scrollIntoView({block:'nearest'});
+  if (focusName){ focusName = false; $('#edName')?.focus(); }
+}
+
+function editorHTML(p, W){
+  const so = splitOptions(freeLen(p)), idx = state.people.indexOf(p), cw = closedWeeks();
+  // Lukittu loma: toiveita ei voi muokata, ja vain lukittua lomaa vastaava toive näkyy värillisenä
+  const fp = fixedPlan(p), lockedK = fp ? [0, 1, 2].find(k => samePlan(wishPlan(p, k), fp)) : undefined;
+  // Kysyntä: montako muuta toivoo viikkoa 1. toiveenaan (lukituilla sovittu loma)
+  const dem = {};
+  for (const q of state.people){ if (q === p) continue; const f = fixedPlan(q) || wl(q)[0]; if (f) for (const w of planWeeks(f)) dem[w] = (dem[w] || 0) + 1; }
+  let months = '', cur = -1, span = 0;
+  for (const w of W){ const m = weekMonday(state.year, w).getMonth(); if (m !== cur){ if (span) months += `<th colspan="${span}">${MONTHS[cur]}</th>`; cur = m; span = 0; } span++; }
+  months += `<th colspan="${span}">${MONTHS[cur]}</th>`;
+  const lanes = [];
+  // Käsin sovittu loma, joka ei vastaa mitään toivetta, näytetään omalla rivillään
+  if (fp && lockedK === undefined){
+    const onSet = new Set(planWeeks(fp)), starts = fp.map(([s]) => s), ends = fp.map(([s, l]) => s + l - 1);
+    lanes.push(`<tr class="fixedrow"><th class="lab"><b>${LOCK} Sovittu loma</b><small>${fp.map(([, l]) => l).join(' + ')} vk</small></th>${W.map(w => onSet.has(w)
+      ? `<td class="cell on fx${starts.includes(w) ? ' first' : ''}${ends.includes(w) ? ' last' : ''}"></td>` : `<td class="cell${isClosed(w) ? ' closedc' : ''}"></td>`).join('')}</tr>`);
+  }
+  for (let k = 0; k < MAX_WISHES; k++){
+    const wk = wishOf(p, k), L = segLens(p, wk.sp), curSp = L.length === 2 ? L[0] : 0;
+    const dim = fp && k !== lockedK, rowCls = [k > 0 || (fp && lockedK === undefined) ? 'sep' : '', dim ? 'dim' : ''].filter(Boolean).join(' ');
+    const shape = so.length ? `<div class="seg xs">${[0, ...so].map(m => `<button ${fp ? 'disabled' : `data-act="setWishSplit" data-k="${k}" data-v="${m}"`} class="${curSp === m ? 'on' : ''}">${m ? `${m}+${freeLen(p) - m}` : 'Yhtenä'}</button>`).join('')}</div>` : '';
+    L.forEach((len, i) => {
+      const s = wk.s[i];
+      const cells = W.map(w => {
+        const on = Number.isInteger(s) && w >= s && w < s + len;
+        const cls = on ? ` on k${k}${w === s ? ' first' : ''}${w === s + len - 1 ? ' last' : ''}` : '';
+        if (isClosed(w)) return '<td class="cell closedc" title="Yhteinen sulku"></td>';
+        const act = fp ? '' : ` data-act="wishCell" data-k="${k}" data-i="${i}" data-w="${w}" data-len="${len}" title="${on ? 'Poista klikkaamalla' : rangeLabel(clamp(w, state.ss, state.se - len + 1), len)}"`;
+        return `<td class="cell${cls}"${act}>${on && w === s ? (k + 1) + '.' : ''}</td>`;
+      }).join('');
+      const sub = L.length === 2 ? (i === 0 ? `pidempi osa, ${len} vk` : `2. osa, ${len} vk`) : `${len} vk`;
+      lanes.push(`<tr${rowCls ? ` class="${rowCls}"` : ''}><th class="lab">${i === 0 ? `<b>${k === lockedK ? LOCK + ' ' : ''}${k + 1}. toive</b>${shape}` : ''}<small>${sub}</small></th>${cells}</tr>`);
+    });
+  }
+  const summary = [0, 1, 2].map(k => {
+    const wk = wishOf(p, k), pl = wishPlan(p, k), set = wk.s.filter(Number.isInteger).length;
+    const txt = pl ? planLabel(pl) + (wk.d ? ` <span class="muted">· toivottu ${fmtDates(wk.d, true)}</span>` : '')
+      : set ? `<span style="color:var(--danger)">${set < segLens(p, wk.sp).length ? 'Valitse myös 2. osa'
+          : segLens(p, wk.sp).some((l, i) => { for (let w = wk.s[i]; w < wk.s[i] + l; w++) if (isClosed(w)) return true; return false; }) ? 'Osuu sulkuviikoille, valitse uudelleen' : 'Osat menevät päällekkäin'}</span>`
+      : '<span class="muted">Ei valittu</span>';
+    return `<li${fp && k !== lockedK ? ' class="dim"' : ''}><span class="lv lv${k + 1}">${k + 1}.</span> ${txt}${k === lockedK ? ` ${LOCK} <span class="muted">sovittu</span>` : ''}</li>`;
+  }).join('');
+  const roleBtns = [...state.roles.map(r => [r.id, r.name]), ['', 'Ei roolia']]
+    .map(([id, n]) => `<button data-act="setRole" data-v="${id}" class="${(p.role || '') === id ? 'on' : ''}">${esc(n)}</button>`).join('');
+  return `<div class="ed-head">${avatar(p.name, 'lg')}<input id="edName" value="${esc(p.name)}" placeholder="Nimi" data-f="pName" data-id="${p.id}" aria-label="Nimi"><button class="btn danger-ghost sm" data-act="delPerson" data-id="${p.id}">${I('trash')} Poista</button></div>
+  <div class="ed-row">
+    <div><span class="field-label">Rooli</span>${state.roles.length ? `<div class="seg">${roleBtns}</div>` : '<span class="muted small">Lisää roolit Asetuksissa</span>'}</div>
+    <div><span class="field-label">Kesäloman pituus</span><div class="seg">${[1,2,3,4,5,6].map(n => `<button data-act="setLen" data-v="${n}" class="${n === p.len ? 'on' : ''}">${n} vk</button>`).join('')}</div></div>
+  </div>
+  ${!freeLen(p) ? `<div class="notice info">Koko loma (${p.len} vk) on yhteisen sulun aikana: <b>${closedLabel()}</b>. Toiveita ei tarvita.</div>` : `
+  ${cw.length ? `<div class="notice info small">Yhteinen sulku <b>${closedLabel()}</b> on kaikille lomaa, ja se lasketaan osaksi kesälomaa. Toiveet koskevat vain loppuosaa: <b>${freeLen(p)} vk</b>.</div>` : ''}
+  ${fp ? `<div class="notice info row" style="justify-content:space-between">${LOCK} <span style="flex:1">Loma on lukittu sovituksi: <b>${datesOf(p, fp, true)}</b> ${lockedK === undefined ? 'Toiveet' : 'Muut toiveet'} eivät enää vaikuta jakoon. Jos haluat muuttaa toiveita, poista ensin lukitus.</span><button class="btn" data-act="unlockP">Poista lukitus</button></div>`
+    : `<div class="hint">${I('pointer')}<span>Valitse kullekin toiveelle muoto (yhtenä tai osissa) ja klikkaa viikkoa, josta loma alkaa. Klikkaa valittua jaksoa uudelleen, niin se poistuu. <b>Kysyntä</b>-rivi näyttää, montako muuta toivoo samaa viikkoa 1. toiveenaan: keltainen = viimeinen paikka, punainen = jo täynnä.</span></div>`}
+  <div class="table-wrap"><table class="wgrid${fp ? ' locked' : ''}"><thead>
+    <tr class="months"><th class="lab"></th>${months}</tr>
+    <tr class="wks"><th class="lab">Viikko</th>${W.map(w => `<th>${w}</th>`).join('')}</tr></thead><tbody>
+    <tr class="demand"><th class="lab">Kysyntä<small>muiden 1. toiveet</small></th>${W.map(w => { if (isClosed(w)) return '<td class="closedc" title="Yhteinen sulku">S</td>';
+      const n = dem[w] || 0, c = state.weekMax[w] ?? state.defMax;
+      return `<td class="${n >= c ? 'over' : n === c - 1 ? 'full' : ''}" title="vk ${w}: ${n} muuta toivoo tätä viikkoa, lomalle mahtuu ${c}">${n || ''}</td>`; }).join('')}</tr>
+    ${lanes.join('')}</tbody></table></div>
+  <ul class="wsum">${summary}</ul>`}
+  <div class="ed-extra">
+    <div><span class="field-label">Sovittu loma</span>${fixedPlan(p)
+      ? `<div class="row">${LOCK}<b>${planLabel(fixedPlan(p))}</b><button class="btn sm" data-act="unlockP">${I('unlock')} Poista lukitus</button></div><small class="muted">Lukittu loma pysyy paikallaan, kun jako lasketaan.</small>`
+      : `<button class="btn" data-act="lockWish"${wl(p)[0] ? '' : ' disabled'}>${I('lock')} Lukitse 1. toive sovituksi lomaksi</button><small class="muted">Esimerkiksi jo sovittu hääloma. Lukittu loma pysyy paikallaan.</small>`}</div>
+    <label><span class="field-label">Lisätietoja</span><textarea rows="2" data-f="pNote" data-id="${p.id}" placeholder="Esimerkiksi lapsilla leiri viikolla 30">${esc(p.note || '')}</textarea><small class="muted">${I('shield')} Älä kirjoita terveystietoja tai muita arkaluonteisia tietoja.</small></label>
+  </div>
+  <div class="ed-nav">
+    <button class="btn" data-act="navP" data-d="-1"${idx <= 0 ? ' disabled' : ''}>${I('chevron-left')} Edellinen</button>
+    <span class="muted small">${idx + 1} / ${state.people.length}</span>
+    <button class="btn primary" data-act="navP" data-d="1">${idx >= state.people.length - 1 ? `${I('user-plus')} Uusi henkilö` : `Seuraava ${I('chevron-right')}`}</button>
+  </div>`;
+}
+
+/* =========================================================================
+   Toiveiden tuonti Excelistä tai Formsista
+   Työntekijä kirjoittaa toiveet päivämäärinä: "5.7.–1.8." tai "28.6.–18.7. ja 30.8.–5.9.".
+   Sarakkeet tunnistetaan otsikoista (Nimi, 1. toive, 2. toive, 3. toive, Lisätietoja),
+   joten myös Microsoft Formsin vastaukset voi liittää sellaisenaan.
+   ========================================================================= */
+let importReport = null;
+function parseDate(t, y){
+  const m = String(t).match(/(\d{1,2})\.(\d{1,2})\.?(\d{2,4})?/); if (!m) return null;
+  let yr = m[3] ? +m[3] : y; if (yr < 100) yr += 2000;
+  const d = new Date(yr, +m[2] - 1, +m[1]);
+  return d.getMonth() === +m[2] - 1 ? d : null;
+}
+function isoWeek(d){
+  const t = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  t.setDate(t.getDate() - (t.getDay() + 6) % 7 + 3);
+  const j = new Date(t.getFullYear(), 0, 4);
+  return 1 + Math.round(((t - j) / 864e5 - 3 + (j.getDay() + 6) % 7) / 7);
+}
+const WEEKDAY = ['sunnuntaina','maanantaina','tiistaina','keskiviikkona','torstaina','perjantaina','lauantaina'];
+const isoDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const fromIso = s => new Date(s + 'T00:00');
+/* Yksi jakso: "5.7.–1.8.", "5.–25.7." tai "vk 28–31" → {a: alkuviikko, l: pituus viikkoina, d: [alku, loppu] tai null, warn}
+   Laskenta toimii kokonaisina viikkoina: viikko, johon loma osuu, varaa koko viikon paikan.
+   Lauantaina tai sunnuntaina alkava loma lasketaan seuraavasta viikosta, maanantaina päättyvä edelliseen.
+   Työntekijän omat päivämäärät (d) säilyvät tulosteita varten. */
+function parseRange(t){
+  t = t.trim(); if (!t) return null;
+  const wk = t.match(/^(?:vk|viikot?)\.?\s*(\d{1,2})(?:\s*[-–—]\s*(\d{1,2}))?/i);
+  if (wk){ const a = +wk[1], b = wk[2] ? +wk[2] : a; return b >= a ? {a, l:b - a + 1, d:null, warn:[]} : null; }
+  const parts = t.split(/\s*[-–—]\s*/); if (parts.length < 2) return null;
+  const d2 = parseDate(parts[1], state.year);
+  let d1 = parseDate(parts[0], d2 ? d2.getFullYear() : state.year);
+  if (!d1 && d2){ const m = parts[0].match(/^(\d{1,2})\.?$/); if (m) d1 = new Date(d2.getFullYear(), d2.getMonth(), +m[1]); }
+  if (!d1 || !d2 || d2 < d1) return null;
+  const s = new Date(d1), e = new Date(d2);
+  if (s.getDay() === 6) s.setDate(s.getDate() + 2); else if (s.getDay() === 0) s.setDate(s.getDate() + 1);
+  if (e.getDay() === 1) e.setDate(e.getDate() - 1);
+  const a = isoWeek(s), b = isoWeek(e);
+  if (b < a) return null;
+  const warn = [];
+  if (d1.getDay() >= 2 && d1.getDay() <= 5) warn.push(`alkaa ${WEEKDAY[d1.getDay()]} ${dm(d1)}: koko viikko ${a} on laskettu lomaksi`);
+  if (d2.getDay() >= 2 && d2.getDay() <= 4) warn.push(`päättyy ${WEEKDAY[d2.getDay()]} ${dm(d2)}: koko viikko ${b} on laskettu lomaksi`);
+  if (d2.getDay() === 1) warn.push(`päättyy maanantaina ${dm(d2)}: maanantaita ei ole laskettu viikon ${b + 1} lomalaisiin`);
+  return {a, l:b - a + 1, d:[isoDate(d1), isoDate(d2)], warn};
+}
+// Toive tekstistä → osat, pidempi osa ensin. null = tyhjä, false = ei tulkittavissa
+function parseWishText(txt){
+  txt = String(txt || '').trim(); if (!txt) return null;
+  const segs = txt.split(/\s+ja\s+|\s*\+\s*|\s*[,&]\s*/i).map(parseRange);
+  if (!segs.length || segs.some(s => !s)) return false;
+  return segs.sort((x, y) => y.l - x.l);
+}
+// Työntekijän omat päivämäärät, jos suunnitelma on täsmälleen jokin hänen toiveistaan
+function exactDates(p, plan){
+  for (let k = 0; k < MAX_WISHES; k++){ const w = p.wishes[k], pl = wishPlan(p, k); if (w?.d && pl && samePlan(pl, plan)) return w.d; }
+  return null;
+}
+const fmtDates = (d, short) => d.map(([a, b]) => (short ? dm : dmy)(fromIso(a)) + '–' + (short ? dm : dmy)(fromIso(b))).join(' ja ');
+/* Loman päivämäärät tekstinä: omat päivämäärät, tai muuten kokonaiset viikot maanantaista sunnuntaihin.
+   Yhteinen sulku lisätään mukaan, ja peräkkäiset jaksot yhdistetään (esim. sulku 12.7.–1.8. + 2.8.–8.8. = 12.7.–8.8.). */
+function datesOf(p, plan, short, withClosure = true){
+  const f = short ? dm : dmy, ex = exactDates(p, plan);
+  const ranges = ex ? ex.map(([a, b]) => [fromIso(a), fromIso(b)]) : plan.map(([s, l]) => [weekMonday(state.year, s), weekEnd(state.year, s + l - 1)]);
+  const cw = closedWeeks();
+  if (withClosure && cw.length) ranges.push([weekMonday(state.year, cw[0]), weekEnd(state.year, cw[cw.length - 1])]);
+  ranges.sort((x, y) => x[0] - y[0]);
+  const merged = [];
+  for (const [a, b] of ranges){ const last = merged[merged.length - 1]; if (last && a - last[1] <= 1.5 * 864e5){ if (b > last[1]) last[1] = b; } else merged.push([a, b]); }
+  return merged.map(([a, b]) => f(a) + '–' + f(b)).join(' ja ');
+}
+// Nimi vertailuun: "Virtanen Aino" = "Aino Virtanen"
+const nameKey = n => norm(n).length ? String(n).toLowerCase().split(/\s+/).filter(Boolean).sort().join(' ') : '';
+
+function importHTML(){
+  return `<div class="card"><h3>${I('file-spreadsheet')} Tuo toiveet Excelistä tai Formsista</h3>
+    <ol class="small" style="margin:0 0 10px;padding-left:18px">
+      <li>Lataa toivepohja. Siinä ovat valmiina henkilöiden nimet ja esimerkkirivi.</li>
+      <li>Jaa pohja henkilöstölle. Jokainen kirjoittaa omalle rivilleen kolme toivetta päivämäärinä, esimerkiksi <b>5.7.–1.8.</b> tai osissa <b>28.6.–18.7. ja 30.8.–5.9.</b></li>
+      <li>Kopioi täytetty taulukko otsikkoriveineen ja liitä se alle. Myös Microsoft Formsin vastausten Excel käy, kun kysymykset ovat Nimi, 1. toive, 2. toive, 3. toive ja Lisätietoja.</li>
+    </ol>
+    <p class="muted small">Jako lasketaan kokonaisina viikkoina. Jos loma alkaa tai päättyy kesken viikon, koko viikko varaa lomapaikan, mutta tulosteissa näkyvät työntekijän omat päivämäärät.</p>
+    <textarea id="impText" rows="7" placeholder="Nimi&#9;1. toive&#9;2. toive&#9;3. toive&#9;Lisätietoja&#10;Aino Virtanen&#9;5.7.–1.8.&#9;28.6.–18.7. ja 30.8.–5.9.&#9;2.8.–29.8.&#9;Lapsilla leiri viikolla 30"></textarea>
+    <p class="muted small" style="margin:8px 0 0">Pelkkä nimilista käy myös: yksi nimi riviä kohden. Toiveet voi lisätä myöhemmin.</p>
+    <div class="row" style="margin-top:10px"><button class="btn primary" data-act="doImport">${I('upload')} Tuo toiveet</button><button class="btn" data-act="tplCsv">${I('download')} Lataa toivepohja (Excel)</button><button class="btn" data-act="toggleImport">Sulje</button></div></div>`;
+}
+function importPeople(text){
+  const rows = text.split(/\r?\n/).filter(l => l.trim()).map(l => l.split(/\t|;/).map(x => x.trim().replace(/^"|"$/g, '')));
+  let cols = {name:0, w:[1, 2, 3], note:4, role:-1}, start = 0;
+  const head = (rows[0] || []).map(h => h.toLowerCase());
+  if (head.some(h => /toive/.test(h))){
+    const f = re => head.findIndex(h => re.test(h));
+    cols = {name: Math.max(0, f(/nimi|name/)), w:[f(/1\.?\s*toive|toive\s*1/), f(/2\.?\s*toive|toive\s*2/), f(/3\.?\s*toive|toive\s*3/)],
+            note: f(/lisä|huom|kommentti/), role: f(/rooli|nimike|ammatti/)};
+    start = 1;
+  }
+  let added = 0, updated = 0; const issues = [];
+  for (const c of rows.slice(start)){
+    const name = c[cols.name] || '';
+    if (!name || /^esim/i.test(name)) continue;
+    let p = state.people.find(x => nameKey(x.name) === nameKey(name));
+    if (!p){ p = {id:uid('p'), name, role:'', len:4, wishes:[]}; state.people.push(p); added++; } else updated++;
+    if (cols.role >= 0 && c[cols.role]){
+      let r = state.roles.find(r => norm(r.name) === norm(c[cols.role]));
+      if (!r){ r = {id:uid('r'), name:c[cols.role], max:state.defMax}; state.roles.push(r); }
+      p.role = r.id;
+    }
+    if (cols.note >= 0) p.note = c[cols.note] || '';
+    const cw = closedWeeks();
+    const plans = cols.w.map((ci, k) => {
+      let pl = ci >= 0 ? parseWishText(c[ci]) : null;
+      if (pl === false) issues.push(`${name}: ${k + 1}. toivetta "${c[ci]}" ei voitu tulkita`);
+      if (!pl) return null;
+      // Jos toive osuu yhteiseen sulkuun, sulkuviikot vähennetään: jäljelle jää loman loppuosa
+      if (cw.length && pl.some(sg => { for (let w = sg.a; w < sg.a + sg.l; w++) if (isClosed(w)) return true; return false; })){
+        const out = [];
+        for (const sg of pl){ let run = null; for (let w = sg.a; w < sg.a + sg.l; w++){ if (isClosed(w)){ if (run){ out.push(run); run = null; } } else { if (!run) run = {a:w, l:0, d:null, warn:[]}; run.l++; } } if (run) out.push(run); }
+        pl = out.sort((x, y) => y.l - x.l);
+        if (!pl.length) return [];
+      }
+      for (const sg of pl) for (const w of sg.warn) issues.push(`${name}: ${k + 1}. toive ${w}`);
+      return pl;
+    });
+    // Loman pituus päätellään 1. toiveesta (mukaan lukien yhteinen sulku)
+    const first = plans.find(Boolean);
+    if (first) p.len = clamp(cw.length + first.reduce((x, sg) => x + sg.l, 0), 1, 6);
+    const so = splitOptions(freeLen(p)), old = p.wishes;
+    p.wishes = plans.map((pl, k) => {
+      if (cols.w[k] < 0) return old[k] || null;   // saraketta ei ollut mukana: vanha toive säilyy
+      if (!pl || !pl.length) return null;
+      const tot = pl.reduce((x, sg) => x + sg.l, 0), ok = tot === freeLen(p);
+      if (!ok) issues.push(cw.length ? `${name}: ${k + 1}. toiveessa on sulun lisäksi ${tot} vk, mutta loppuosa on ${freeLen(p)} vk` : `${name}: ${k + 1}. toive on ${tot} vk, mutta loma on ${p.len} vk`);
+      if (pl.length > 2) issues.push(`${name}: ${k + 1}. toiveessa on yli 2 osaa, vain 2 ensimmäistä otettiin`);
+      // Omat päivämäärät säilytetään vain, jos toive vastaa loman pituutta
+      const d = ok && pl.every(sg => sg.d) ? pl.slice(0, 2).map(sg => sg.d) : null;
+      if (pl.length === 1) return d ? {sp:0, s:[pl[0].a], d} : {sp:0, s:[pl[0].a]};
+      if (!so.includes(pl[0].l)){ issues.push(`${name}: ${k + 1}. toiveen pidempi osa on alle ${state.minMain} vk`); return {sp:0, s:[pl[0].a]}; }
+      return d ? {sp:pl[0].l, s:[pl[0].a, pl[1].a], d} : {sp:pl[0].l, s:[pl[0].a, pl[1].a]};
+    });
+    fixShapes(p);
+  }
+  importReport = {added, updated, issues};
+  return importReport;
+}
+function templateCSV(){
+  const rows = ['Nimi;1. toive;2. toive;3. toive;Lisätietoja',
+    'Esimerkki: Aino Virtanen;5.7.–1.8.;28.6.–18.7. ja 30.8.–5.9.;2.8.–29.8.;Lapsilla leiri viikolla 30'];
+  for (const p of state.people){
+    const wish = k => { const pl = wishPlan(p, k); return !pl ? '' : p.wishes[k].d ? fmtDates(p.wishes[k].d, true) : datesOf(p, pl, true, false); };
+    rows.push([p.name, wish(0), wish(1), wish(2), (p.note || '').replace(/[;\r\n]+/g, ' ')].join(';'));
+  }
+  return '﻿' + rows.join('\r\n');
+}
+
+let resSel = null;   // tulosnäkymässä muokattava henkilö
+function calendarHTML(A){
+  const hp = compMap(), c = occFrom(A);
+  const W = seasonWeeks();
+  let h = `<div class="table-wrap"><table class="cal"><thead><tr><th class="name">Henkilö</th>${W.map(w => `<th>${w}<small>${dm(weekMonday(state.year, w))}</small></th>`).join('')}</tr></thead><tbody>`;
+  const groups = [...state.roles.map(r => ({id:r.id, name:r.name})), {id:'', name:'Ei roolia'}];
+  for (const g of groups){
+    const ps = state.people.filter(p => (p.role || '') === g.id || (g.id === '' && !state.roles.some(r => r.id === p.role)));
+    if (!ps.length) continue;
+    h += `<tr class="group"><td class="name">${esc(g.name)}</td><td colspan="${W.length}"></td></tr>`;
+    for (const p of ps){
+      const a = A[p.id] || {s:null, lv:5}, w1 = wl(p)[0], sel = p.id === resSel;
+      const onSet = new Set(a.s ? planWeeks(a.s) : []), wishSet = new Set(w1 && a.lv !== 1 ? planWeeks(w1) : []), movable = sel && freeLen(p);
+      h += `<tr${sel ? ' class="selrow"' : ''}><td class="name"><button class="linkbtn" data-act="resSel" data-id="${sel ? '' : p.id}" title="Muokkaa lomaa">${esc(p.name)}</button> ${fixedPlan(p) ? LOCK : ''}${hp[p.id] ? ` <span class="comp" title="Etusija">${hp[p.id]}</span>` : ''}</td>`;
+      for (const w of W){
+        const on = onSet.has(w), wish = !on && wishSet.has(w);
+        if (isClosed(w)){ h += '<td class="v closedv" title="Yhteinen sulku"></td>'; continue; }
+        const lbl = a.s?.length && w === a.s[0][0] ? LEVEL_SHORT[a.lv] : a.s?.length && w === a.s[1]?.[0] ? '+' : '';
+        const mv = movable ? ` data-act="moveTo" data-w="${w}" title="Siirrä loma tähän"` : '';
+        h += on ? `<td class="v lv${a.lv}${sel ? ' mv' : ''}"${mv}>${lbl}</td>` : `<td class="${wish ? 'wish' : ''}${sel ? ' mv' : ''}"${mv}${wish && !sel ? ' title="1. toive"' : ''}></td>`;
+      }
+      h += '</tr>';
+    }
+  }
+  h += `</tbody><tfoot><tr><td class="name">Lomalla / enintään</td>${W.map(w => { if (isClosed(w)) return '<td class="closedc" title="Yhteinen sulku">S</td>'; const n = c.abs[w] || 0, cap = c.cap(w); return `<td class="${n > cap ? 'bad' : n === cap ? 'full' : ''}" title="${n}/${cap}">${n}/${cap}</td>`; }).join('')}</tr>`;
+  for (const r of state.roles){
+    h += `<tr><td class="name">${esc(r.name)}: lomalla / enintään</td>${W.map(w => { if (isClosed(w)) return '<td class="closedc">S</td>'; const n = c.rabs[r.id][w] || 0;
+      return `<td class="${n > r.max ? 'bad' : n === r.max ? 'full' : ''}" title="Paikalla ${c.roleTot[r.id] - n}">${n}/${r.max}</td>`; }).join('')}</tr>`;
+  }
+  return h + '</tfoot></table></div>';
+}
+function legendHTML(){
+  return `<div class="legend">${[1,2,3,4].map(l => `<span><i class="lv${l}"></i>${LEVEL_LABEL[l]}</span>`).join('')}<span><i class="lv0"></i>Ei toiveita</span><span><i class="wish"></i>1. toive, jota ei saatu</span><span><i style="background:var(--warn-soft)"></i>Viikko täynnä</span><span>${LOCK}&nbsp;Sovittu tai käsin siirretty</span>${closedWeeks().length ? '<span><i class="closedv"></i>Yhteinen sulku</span>' : ''}</div>`;
+}
+// Viikot, joilla miehitys ei riitä (yleensä käsin tehtyjen muutosten jälkeen)
+function violations(A){
+  const c = occFrom(A), out = [];
+  for (let w = state.ss; w <= state.se; w++){
+    if ((c.abs[w] || 0) > c.cap(w)) out.push(`viikolla ${w} lomalla ${c.abs[w]}, kun enintään ${c.cap(w)}`);
+    for (const r of state.roles){ const n = c.rabs[r.id][w] || 0; if (n > r.max) out.push(`viikolla ${w} lomalla ${n} (${r.name.toLowerCase()}), kun enintään ${r.max}`); }
+  }
+  return out;
+}
+// Henkilön paneeli tulosnäkymässä: miksi tämä loma, ja muokkaus
+function movePanelHTML(p, A){
+  const a = A[p.id] || {s:null, lv:5}, c = occFrom(A);
+  const head = `<div class="pp-head">${avatar(p.name, 'lg')}<div style="flex:1;min-width:0"><h3>${esc(p.name)}</h3><div class="muted small">${esc(roleName(p.role))} · ${p.len} vk${p.note ? ` · ${esc(p.note)}` : ''}</div></div><span class="lv lv${a.lv}">${LEVEL_LABEL[a.lv]}</span><button class="icon-btn" data-act="resSel" data-id="" title="Sulje">${I('x')}</button></div>`;
+  if (!freeLen(p)) return `<div class="card personpanel no-print">${head}<p class="small" style="margin:0">Koko loma on yhteisen sulun aikana (${closedLabel()}), joten siirrettävää ei ole.</p></div>`;
+  if (a.s) put(c, p, a.s, -1);
+  const opts = wl(p).map((pl, k) => {
+    const cur = samePlan(pl, a.s), f = cur ? null : check(c, p, pl);
+    return `<button class="btn${cur ? ' primary' : ''}" data-act="movePlan" data-k="${k}"${cur ? ' disabled' : ''}><span class="lv lv${k + 1}">${k + 1}.</span> ${planLabel(pl)} ${cur ? '<span class="muted small">nykyinen</span>' : f ? `<span class="why">${I('x')} ei mahdu: ${esc(whyText(f))}</span>` : `<span class="fits">${I('check')} mahtuu</span>`}</button>`;
+  }).join('');
+  const swaps = state.people.filter(q => q !== p && freeLen(q) === freeLen(p) && A[q.id]?.s?.length).map(q => `<option value="${q.id}">${esc(q.name)}: ${planLabel(A[q.id].s)}</option>`).join('');
+  return `<div class="card personpanel no-print">${head}
+    <div class="pp-grid">
+      <div><p class="pp-sec-title">${I('lightbulb')} Miksi tämä loma?</p>
+        <div class="pp-current">${I('calendar')}<b>${a.s ? datesOf(p, a.s, true) : 'Ei lomaa kaudella'}</b>${closedWeeks().length && a.s ? '<span class="muted small">sisältää sulun</span>' : ''}${fixedPlan(p) ? LOCK : ''}</div>
+        ${storyHTML(p, A)}</div>
+      <div><p class="pp-sec-title">${I('pencil')} Muokkaa lomaa</p>
+        <div class="opts">${opts || '<span class="muted small">Ei toiveita.</span>'}</div>
+        <div class="hint">${I('pointer')}<span>Tai klikkaa kalenterissa henkilön riviltä viikkoa, johon loma siirretään. Loman muoto säilyy. Jaetussa lomassa siirtyy klikkausta lähempi osa.</span></div>
+        ${swaps ? `<label class="field"><span>${I('arrows')} Vaihda lomat toisen kanssa</span><select data-f="swapWith" style="width:100%"><option value="">Valitse henkilö…</option>${swaps}</select></label>` : ''}
+        <div class="row">${fixedPlan(p) ? `<button class="btn" data-act="unlockRes">${I('unlock')} Poista lukitus</button>` : a.s ? `<button class="btn" data-act="lockRes">${I('lock')} Lukitse tämä loma</button>` : ''}</div>
+        <p class="muted small" style="margin:10px 0 0">Käsin siirretyt lomat lukitaan, jotta ne säilyvät, vaikka jako lasketaan uudelleen.</p></div>
+    </div></div>`;
+}
+// Käsin tehty muutos: loma lukitaan ja tulos pysyy ajan tasalla
+function applyManual(p, plan){
+  p.fixed = plan.map(x => [...x]);
+  state.result.A[p.id] = {s:p.fixed, lv:levelFor(p, p.fixed), fixed:true};
+  state.result.key = inputsKey();
+}
+// Henkilökohtainen viesti lomailmoitukseen ja leikepöydälle
+function messageFor(c, p, A){
+  const a = A[p.id], W = wl(p);
+  const next = state.comp && a.lv > 1 && a.lv < 5 ? ' Saat siksi ensi vuonna etusijaa.' : '';
+  const reasons = () => {
+    if (a.s) put(c, p, a.s, -1);
+    const out = []; const n = Math.min(a.lv >= 4 ? W.length : a.lv - 1, W.length);
+    for (let k = 0; k < n; k++) out.push(`${k + 1}. toiveesi ei mahtunut, koska ${whyText(check(c, p, W[k]))}.`);
+    if (a.s) put(c, p, a.s, 1);
+    return out.length ? ' ' + out.join(' ') : '';
+  };
+  if (a.lv === 6) return 'Koko lomasi on yhteisen sulun aikana. Hyvää lomaa!';
+  if (a.lv === 5) return 'Kesälomaasi ei vielä voitu sijoittaa. Sovitaan siitä erikseen.';
+  if (a.fixed && a.lv >= 1 && a.lv <= 3) return `Sait ${a.lv}. toiveesi. Hyvää lomaa!`;
+  if (a.fixed) return 'Lomasi ajankohdasta on sovittu erikseen.' + next;
+  if (a.lv === 1) return 'Sait 1. toiveesi. Hyvää lomaa!';
+  if (a.lv === 0) return 'Et antanut toiveita, joten loma sijoitettiin vapaaseen kohtaan.';
+  if (a.lv === 4) return 'Mikään toiveistasi ei mahtunut, joten sait lähimmän vapaan jakson.' + reasons() + next;
+  return `Sait ${a.lv}. toiveesi.` + reasons() + next;
+}
+
+function readyHTML(nFixed){
+  const n = state.people.length, miss = state.people.filter(p => freeLen(p) && !fixedPlan(p) && !wl(p).length).length, c = capacity();
+  return `<div class="card ready"><div class="ready-ic">${I('sparkles')}</div><h3>Valmiina laskentaan</h3>
+    <ul class="checks">
+      <li class="ok">${I('check-circle')}<span>${n} henkilöä, lomakausi vk ${state.ss}–${state.se}</span></li>
+      <li class="${miss ? 'warn' : 'ok'}">${I(miss ? 'alert' : 'check-circle')}<span>${miss ? `${miss} henkilöltä puuttuu toiveet. Heidän lomansa sijoitetaan siihen, mihin mahtuu.` : 'Kaikilla on toiveet'}</span></li>
+      <li class="${c.lvl}">${I(c.lvl === 'ok' ? 'check-circle' : 'alert')}<span>Lomaviikkoja tarvitaan ${c.need}, lomapaikkoja on ${c.have}${c.lvl === 'err' ? ': kaikki eivät mahdu' : c.lvl === 'warn' ? ': tiukka' : ''}</span></li>
+      ${nFixed ? `<li class="info">${I('lock')}<span>${nFixed} sovittua lomaa pysyy paikallaan</span></li>` : ''}
+    </ul>
+    <div><button class="btn primary lg" data-act="run">${I('sparkles')} Laske lomajako</button></div>
+    <p class="muted small" style="margin:14px 0 0">Laskenta kokeilee ${RUNS} arvontaa ja valitsee reiluimman. Voit laskea uudelleen niin monta kertaa kuin haluat. <a href="#" data-act="tab" data-tab="help">Miten jako tehdään?</a></p></div>`;
+}
+const tile = (ic, cls, k, v, d) => `<div class="metric"><span class="mi ${cls}">${I(ic)}</span><div class="k">${k}</div><div class="v">${v}</div><div class="d">${d}</div></div>`;
+function renderResult(){
+  const r = state.result, el = $('#tab-result');
+  if (!state.people.length){
+    el.innerHTML = `<div class="section-head"><div><h2>Lomajako ${state.year}</h2></div></div><div class="card empty"><div class="ic-box">${I('calendar')}</div><h3>Ei vielä henkilöitä</h3><p class="muted">Lisää ensin henkilöt ja heidän toiveensa. Sen jälkeen jako lasketaan yhdellä napilla.</p>
+      <div class="row" style="justify-content:center"><button class="btn primary" data-act="tab" data-tab="people">${I('users')} Henkilöt ja toiveet</button><button class="btn" data-act="demo">${I('sparkles')} Kokeile esimerkillä</button></div></div>`;
+    return;
+  }
+  const nFixed = state.people.filter(fixedPlan).length;
+  let body = '';
+  if (!r) body = readyHTML(nFixed);
+  else {
+    const A = r.A, P = state.people.filter(p => A[p.id]);
+    if (resSel && !A[resSel]) resSel = null;
+    const stale = r.key !== inputsKey();
+    const c = occFrom(A), hp = compMap(), viol = violations(A);
+    const wishers = P.filter(p => A[p.id].lv >= 1 && A[p.id].lv <= 5);
+    const n1 = wishers.filter(p => A[p.id].lv === 1).length, n12 = wishers.filter(p => A[p.id].lv <= 2).length;
+    const n4 = P.filter(p => A[p.id].lv === 4).length, n5 = P.filter(p => A[p.id].lv === 5).length;
+    const rank = p => A[p.id].lv === 6 ? -1 : A[p.id].lv;
+    const sorted = [...P].sort((a, b) => rank(b) - rank(a) || a.name.localeCompare(b.name, 'fi'));
+    const sel = resSel && state.people.find(p => p.id === resSel);
+    const dist = [1, 2, 3, 4, 0, 5, 6].map(l => [l, P.filter(p => A[p.id].lv === l).length]).filter(([, n]) => n);
+    const good = !viol.length && !n5;
+    const head = wishers.length ? `${n12} / ${wishers.length} sai 1. tai 2. toiveensa` : 'Lomat on sijoitettu';
+    const sub = [n5 ? `${n5} henkilöä jäi ilman lomaa kaudella.` : 'Kaikki saivat loman.', viol.length ? 'Miehityksessä on puutteita.' : 'Lomapaikat riittävät joka viikko.', n1 ? `${n1} sai juuri ensimmäisen toiveensa.` : ''].filter(Boolean).join(' ');
+    body = `${stale ? notice('warn', 'alert', `<div class="row" style="justify-content:space-between"><span>Tietoja on muutettu laskennan jälkeen. Laske jako uudelleen, jotta muutokset tulevat mukaan.</span><button class="btn sm" data-act="run">${I('refresh')} Laske uudelleen</button></div>`) : ''}
+    ${viol.length ? notice('err', 'alert', `<b>Miehitys ei riitä:</b><ul>${viol.map(v => `<li>${esc(v)}</li>`).join('')}</ul>Siirrä lomia tai varmista sijaiset.`) : ''}
+    <div class="card"><div class="summary"><div><p class="big">${head}</p><p class="muted" style="margin:0">${sub}</p></div><span class="sum-ic${good ? '' : ' warn'}">${I(good ? 'sun' : 'alert')}</span></div>
+      <div class="dist">${dist.map(([l, n]) => `<span class="bg${l}" style="width:${n / P.length * 100}%" title="${LEVEL_LABEL[l]}: ${n}"></span>`).join('')}</div>
+      <div class="dist-legend">${dist.map(([l, n]) => `<span><i class="bg${l}"></i>${LEVEL_LABEL[l]}: <b>${n}</b></span>`).join('')}</div></div>
+    <div class="metrics">
+      ${tile('star', 'ok', '1. toive', pct(n1 / wishers.length), `${n1} / ${wishers.length} henkilöä`)}
+      ${tile('heart', 'ok', '1. tai 2. toive', pct(n12 / wishers.length), `${n12} / ${wishers.length} henkilöä`)}
+      ${tile('move', n4 ? 'warn' : 'ok', 'Muu jakso', n4, n4 ? 'Mikään toive ei mahtunut' : 'Kaikille mahtui toive')}
+      ${tile('shield', viol.length ? 'err' : 'ok', 'Miehitys', viol.length ? viol.length + ' puutetta' : 'Kunnossa', 'Lomapaikat yhteensä ja rooleittain')}
+    </div>
+    ${sel ? movePanelHTML(sel, A) : ''}
+    <div class="card"><div class="card-head"><h3>${I('calendar')} Kalenteri ${state.year}</h3><span class="muted small no-print">${I('pointer')} Klikkaa nimeä: näet perustelun ja voit siirtää lomaa</span></div>${legendHTML()}${calendarHTML(A)}</div>
+    ${decisionHTML(A)}
+    <div class="card"><h3>${I('message')} Perustelut jokaiselle</h3><p class="muted small">Jokainen näkee, mitä sai ja miksi. Heikoimmin onnistuneet ensin. Kopioi viesti ja lähetä se henkilölle, tai tulosta lomailmoitukset.</p>
+      <div class="table-wrap"><table class="tbl"><thead><tr><th>Nimi</th><th>Loma</th><th>Tulos</th><th class="num">Etusija</th><th>Perustelu</th><th></th></tr></thead><tbody>
+      ${sorted.map(p => { const a = A[p.id]; return `<tr><td><div class="row" style="gap:10px;flex-wrap:nowrap">${avatar(p.name, 'sm')}<div><b>${esc(p.name)}</b> ${fixedPlan(p) ? LOCK : ''}<div class="muted small">${esc(roleName(p.role))}${p.note ? ` · ${esc(p.note)}` : ''}</div></div></div></td>
+        <td style="white-space:nowrap">${a.s !== null ? datesOf(p, a.s, true).replace(' ja ', '<br>ja ') + `<div class="muted small">${[...a.s.map(([s, l]) => l > 1 ? `vk ${s}–${s + l - 1}` : `vk ${s}`), ...(closedWeeks().length ? ['sulku'] : [])].join(' + ')}</div>` : '–'}</td>
+        <td><span class="lv lv${a.lv}">${LEVEL_LABEL[a.lv]}</span></td><td class="num"><span class="comp${hp[p.id] ? '' : ' zero'}">${fmtNum(hp[p.id] || 0)}</span></td>
+        <td class="small" style="min-width:220px">${esc(explain(c, p, A))}</td>
+        <td><div class="row" style="flex-wrap:nowrap;gap:4px"><button class="btn sm" data-act="resSel" data-id="${p.id}" title="Näytä päätöksen vaiheet">${I('lightbulb')} Miksi?</button><button class="icon-btn" data-act="copyMsg" data-id="${p.id}" title="Kopioi viesti henkilölle">${I('copy')}</button></div></td></tr>`; }).join('')}
+      </tbody></table></div>
+      <p class="muted small" style="margin:12px 0 0">${I('clock')} Laskettu ${esc(r.at)}. Arvonnan tunniste ${r.seed}.</p></div>
+    <div class="nextbar no-print"><span class="muted">${I('history')} Kun jako on lopullinen, tallenna se historiaan. Silloin tänä kesänä joustaneet ovat ensi kesänä vuorossa ensin.</span><button class="btn primary" data-act="saveHist">${I('save')} Tallenna historiaan</button></div>`;
+  }
+  el.innerHTML = `<div class="section-head"><div><h2>Lomajako ${state.year}</h2><p class="muted">${r ? 'Tarkista jako, katso perustelut ja hienosäädä tarvittaessa käsin.' : 'Kun säännöt ja toiveet ovat valmiina, laske jako.'}</p></div>
+    ${r ? `<div class="toolbar no-print"><button class="btn primary" data-act="run">${I('refresh')} Laske uudelleen</button>
+      <button class="btn" data-act="reroll" title="Tasatilanteet ratkaistaan uudella arvonnalla">${I('shuffle')} Toinen vaihtoehto</button>
+      <details class="menu"><summary class="btn">${I('printer')} Tulosta ja vie ${I('chevron-down')}</summary><div class="menu-pop">
+        <button data-act="printWall">${I('calendar-range')}<span><b>Seinälista</b><small>Kalenteri ja lomat aikajärjestyksessä</small></span></button>
+        <button data-act="printSlips">${I('mail')}<span><b>Lomailmoitukset</b><small>Jokaiselle oma lappu perusteluineen</small></span></button>
+        <button data-act="csv">${I('file-spreadsheet')}<span><b>Vie Exceliin</b><small>Lomat ja perustelut taulukkona</small></span></button></div></details>
+      <button class="btn" data-act="saveHist">${I('save')} Tallenna historiaan</button></div>` : ''}</div>
+    ${body}`;
+}
+
+function renderHistory(){
+  const hp = compMap(), hs = [...state.history].sort((a, b) => b.year - a.year);
+  const maxP = Math.max(1, ...state.people.map(p => hp[p.id] || 0));
+  $('#tab-history').innerHTML = `<div class="section-head"><div><h2>Historia ja vuorottelu</h2><p class="muted">Aiempien kesien tulokset. Niiden perusteella aiemmin joustaneet ovat tänä vuonna vuorossa ensin.</p></div></div>
+  <div class="grid-wide">
+    <div class="card"><h3>${I('scale')} Etusija kesällä ${state.year} ${tip('Mitä suurempi etusija, sitä aiemmin henkilö on vuorossa, kun toiveita jaetaan. Etusija kertyy kesistä, joina ei saanut 1. toivettaan.')}</h3>
+      ${state.comp ? '' : notice('warn', 'alert', 'Vuorottelu on pois päältä asetuksissa, joten etusija ei nyt vaikuta jakoon.')}
+      <div class="table-wrap"><table class="tbl"><thead><tr><th>Nimi</th><th>Etusija</th><th>Mistä se tulee</th></tr></thead><tbody>
+      ${[...state.people].sort((a, b) => hp[b.id] - hp[a.id] || a.name.localeCompare(b.name, 'fi')).map(p => `<tr><td><div class="row" style="gap:10px;flex-wrap:nowrap">${avatar(p.name, 'sm')}${esc(p.name)}</div></td>
+        <td style="min-width:130px"><div class="pbar"><i style="width:${Math.round((hp[p.id] || 0) / maxP * 70)}px"></i><b>${fmtNum(hp[p.id] || 0)}</b></div></td>
+        <td class="small muted">${compBreakdown(p.name) || '–'}</td></tr>`).join('') || '<tr><td colspan="3" class="muted">Ei henkilöitä.</td></tr>'}
+      </tbody></table></div></div>
+    <div>
+      <div class="card"><h3>${I('lightbulb')} Näin etusija lasketaan</h3>
+        <p class="small" style="margin-bottom:4px">Jokainen toive, jota ei saatu, kasvattaa etusijaa:</p>
+        <ul class="small pts"><li><span class="lv lv2">2. toive</span>+1</li><li><span class="lv lv3">3. toive</span>+2</li><li><span class="lv lv4">Muu jakso</span>+3</li><li><span class="lv lv5">Ei lomaa</span>+4</li></ul>
+        <p class="small">Edellinen kesä vaikuttaa täysin, sitä edellinen puolella painolla, sitä edellinen neljäsosalla ja niin edelleen. Vanhat kesät siis unohtuvat vähitellen.</p>
+        <div class="example"><b>Esimerkki.</b> Viime kesänä 3. toive (+2) ja toissa kesänä muu jakso (+3 × 0,5 = 1,5). Etusija on 3,5. Tänä kesänä olet vuorossa ennen niitä, joiden etusija on pienempi.</div></div>
+      <h3 style="margin:20px 0 10px">${I('history')} Tallennetut kesät</h3>
+      ${hs.map(h => `<details class="box"><summary>${I('calendar')} Kesä ${h.year} <span class="muted small" style="font-weight:400">${h.rows.length} henkilöä</span></summary>
+        <div class="table-wrap"><table class="tbl"><tbody>${h.rows.map(x => `<tr><td>${esc(x.name)}</td><td><span class="lv lv${x.level}">${LEVEL_LABEL[x.level] || x.level}</span></td></tr>`).join('')}</tbody></table></div>
+        <button class="btn danger-ghost sm" style="margin-top:8px" data-act="delHist" data-year="${h.year}">${I('trash')} Poista kesä ${h.year}</button></details>`).join('')
+        || `<div class="card empty" style="padding:28px 20px"><div class="ic-box">${I('history')}</div><p class="muted small" style="margin:0">Historia on tyhjä. Kun jako on valmis, tallenna se historiaan Lomajako-sivulta.</p></div>`}
+    </div>
+  </div>`;
+}
+
+function renderHelp(){
+  const sec = (id, icon, title, html) => `<section class="card help-sec" id="${id}"><h3>${I(icon)} ${title}</h3>${html}</section>`;
+  const toc = [['h-lyhyesti', 'sun', 'Lyhyesti'], ['h-jako', 'lightbulb', 'Miten jako päätetään'], ['h-etusija', 'scale', 'Etusija ja vuorottelu'], ['h-paikat', 'users', 'Lomapaikat ja roolit'], ['h-laki', 'book', 'Vuosilomalaki lyhyesti'], ['h-faq', 'help', 'Usein kysyttyä'], ['h-tiedot', 'shield', 'Tiedot ja tietosuoja']];
+  const steps = [
+    ['lock', 'Sovitut lomat ensin', 'Jo sovitut (lukitut) lomat pysyvät paikallaan.'],
+    ['scale', 'Vuorojärjestys', 'Suurin etusija ensin. Tasatilanteet arvotaan.'],
+    ['users', 'Toiveet vuorollaan', 'Jokainen saa vuorollaan parhaan toiveensa, joka vielä mahtuu.'],
+    ['move', 'Jos mikään ei mahdu', 'Lähin vapaa jakso 1. toiveesta. Lomaa ei pilkota, ellei sitä ole toivottu.'],
+    ['shuffle', 'Vaihdot', 'Vaihdot, joissa joku paranee eikä kukaan huonone.'],
+    ['dice', `Paras ${RUNS} arvonnasta`, 'Valitaan jako, jossa vähiten jää ilman toivettaan.'],
+  ];
+  $('#tab-help').innerHTML = `<div class="section-head"><div><h2>Näin Lomajako toimii</h2><p class="muted">Säännöt ovat samat kaikille, ja jokainen päätös voidaan perustella. Tämä sivu kertoo, miten.</p></div></div>
+  <div class="help-layout">
+    <nav class="toc" aria-label="Sisällys">${toc.map(([id, ic, t]) => `<a href="#${id}">${I(ic)} ${t}</a>`).join('')}</nav>
+    <div>
+    ${sec('h-lyhyesti', 'sun', 'Lyhyesti', `<p>Lomajako jakaa kesälomat niin, että</p>
+      <ul class="never"><li>${I('check-circle')}<span><b>töissä on joka viikko tarpeeksi väkeä</b> (lomapaikat yhteensä ja rooleittain),</span></li><li>${I('check-circle')}<span><b>mahdollisimman moni saa toivomansa loman</b>, ja</span></li><li>${I('check-circle')}<span><b>hyvät lomaviikot vuorottelevat</b> reilusti vuodesta toiseen.</span></li></ul>
+      <h4>Työnkulku</h4>
+      <ol><li><b>Asetukset:</b> lomapaikat, lomakausi, mahdollinen yhteinen sulku (esim. tehdasloma), yksikön nimi ja toiveiden palautuspäivä.</li>
+      <li><b>Toiveiden keräys:</b> tulosta pelisäännöt ja toivelomake, tai jaa Excel-toivepohja. Toiveet kirjoitetaan päivämäärinä, esimerkiksi 5.7.–1.8. Myös Microsoft Formsin vastaukset käyvät.</li>
+      <li><b>Henkilöt ja toiveet:</b> tarkista toiveet, merkitse roolit ja lukitse jo sovitut lomat. Toiveita voi myös klikata suoraan kalenteriin.</li>
+      <li><b>Lomajako:</b> laske, tarkista kalenteri ja perustelut. Siirrä lomia tai vaihda kahden henkilön lomat. Tulosta seinälista ja lomailmoitukset.</li>
+      <li><b>Historia:</b> tallenna lopullinen jako. Ensi kesänä se antaa etusijan niille, jotka joustivat.</li></ol>
+      <p class="muted small" style="margin:0">Lomajako tekee ehdotuksen. Lopullisen päätöksen lomien ajankohdasta tekee aina esihenkilö.</p>`)}
+    ${sec('h-jako', 'lightbulb', 'Miten jako päätetään', `<ol class="pipe">${steps.map(([ic, t, d], i) => `<li><span class="ic">${I(ic)}</span><b>${i + 1}. ${t}</b><p>${d}</p></li>`).join('')}</ol>
+      <div class="example"><b>Esimerkki.</b> Aino toivoo 1. toiveena viikkoja 27–30. Hänen vuoronsa tulee viidentenä, koska neljällä muulla on suurempi etusija. Viikolla 28 on silloin jo 4/4 lomalla, joten 1. toive ei mahdu. Ainon 2. toive, viikot 31–34, mahtuu, ja hän saa sen. Ensi kesänä Ainon etusija on +1, joten hän on vuorossa aiemmin.</div>
+      <h4>Mitä laskenta ei koskaan tee</h4>
+      <ul class="never"><li>${I('shield')}<span>Ei ylitä lomapaikkoja, yhteensä tai rooleittain.</span></li><li>${I('shield')}<span>Ei jaa lomaa osiin, ellei henkilö ole itse toivonut sitä.</span></li><li>${I('shield')}<span>Ei siirrä lukittua lomaa.</span></li><li>${I('shield')}<span>Ei huononna kenenkään tulosta vaihdoissa.</span></li></ul>
+      <p class="small muted" style="margin:12px 0 0">Jokaisen kohdalla näkyy Lomajako-sivulla <b>Miksi?</b>-painike. Se näyttää vaihe vaiheelta: etusija, vuoro, mitkä toiveet eivät mahtuneet ja mikä viikko oli täynnä.</p>`)}
+    ${sec('h-etusija', 'scale', 'Etusija ja vuorottelu', `<p>Etusija ratkaisee vuorojärjestyksen. Se kertyy kesistä, joina ei saanut ensimmäistä toivettaan:</p>
+      <ul class="small pts"><li><span class="lv lv2">2. toive</span>+1</li><li><span class="lv lv3">3. toive</span>+2</li><li><span class="lv lv4">Muu jakso</span>+3</li><li><span class="lv lv5">Ei lomaa</span>+4</li></ul>
+      <p>Edellinen kesä vaikuttaa täysin, sitä edellinen puolella painolla ja niin edelleen.</p>
+      <p><span class="formula">etusija = Σ (saatu sija − 1) × 0,5^(vuosia sitten − 1)</span></p>
+      <p class="muted small" style="margin:0">Jos usealla on sama etusija, järjestys arvotaan. Arvonta toistetaan ${RUNS} kertaa, ja niistä valitaan jako, jossa vähiten jää ilman toivettaan ja huonoimmat tulokset ovat mahdollisimman lieviä.</p>`)}
+    ${sec('h-paikat', 'users', 'Lomapaikat ja roolit', `<p><b>Lomapaikka</b> tarkoittaa, montako henkilöä voi olla lomalla samalla viikolla. Yhteensä-raja koskee koko yksikköä. Roolin raja (esim. enintään 2 sairaanhoitajaa) varmistaa, että jokaista osaamista jää töihin.</p>
+      <p>Yksittäisille viikoille voi antaa poikkeuksen, esimerkiksi juhannukselle vähemmän paikkoja.</p>
+      <p style="margin:0"><b>Mahtuuko kaikki?</b> Asetuksissa näkyy, montako lomaviikkoa tarvitaan ja montako lomapaikkaa koko kaudella on. Jos tarve on suurempi, kaikki eivät mahdu lomalle kaudella. Jos tarve on lähes yhtä suuri, kaikki eivät voi saada toivettaan.</p>`)}
+    ${sec('h-laki', 'book', 'Vuosilomalaki lyhyesti', `<ul><li>Kesäloma on 24 arkipäivää eli 4 viikkoa (täysi lomanmääräytymisvuosi), ja se annetaan lomakaudella 2.5.–30.9.</li>
+      <li>Kesäloma annetaan yhtenäisenä. Jos työn järjestelyt sitä vaativat, 12 arkipäivää (2 viikkoa) ylittävän osan voi jakaa. Siksi jaetun loman pidemmän osan on oltava vähintään 2 viikkoa.</li>
+      <li>Työnantaja päättää loman ajankohdan, mutta työntekijää on kuultava. Ajankohta ilmoitetaan viimeistään kuukautta ennen loman alkua.</li>
+      <li>Työehtosopimus voi poiketa laista. Esimerkiksi kunta-alan KVTES laskee lomapäivinä (5 viikossa). Tarkista oman alan sopimus ja muuta asetusta tarvittaessa.</li></ul>`)}
+    ${sec('h-faq', 'help', 'Usein kysyttyä', `<div class="faq">
+      <details><summary>Miksi en saanut 1. toivettani?</summary><p>Jollakin toiveesi viikolla oli jo kaikki lomapaikat käytössä, kun vuorosi tuli. Miksi?-painike näyttää, mikä viikko oli täynnä. Ensi kesänä saat siitä etusijaa.</p></details>
+      <details><summary>Onko arvonta reilu?</summary><p>Arvonta ratkaisee vain järjestyksen niiden kesken, joilla on sama etusija. Se toistetaan ${RUNS} kertaa, ja niistä valitaan jako, joka on kaikille paras. Kenenkään nimi tai tehtävä ei vaikuta arvontaan.</p></details>
+      <details><summary>Voiko jakoa muuttaa käsin?</summary><p>Voi. Klikkaa nimeä kalenterissa: voit valita toisen toiveen, siirtää loman toiselle viikolle tai vaihtaa lomat toisen henkilön kanssa. Käsin muutetut lomat lukitaan. Jos muutos ylittää lomapaikat, puute näytetään punaisella.</p></details>
+      <details><summary>Mitä jos loma alkaa keskellä viikkoa?</summary><p>Jako lasketaan kokonaisina viikkoina: viikko, johon loma osuu, varaa koko viikon lomapaikan. Tulosteissa näkyvät henkilön omat päivämäärät.</p></details>
+      <details><summary>Miksi kolme toivetta?</summary><p>Kolme erilaista vaihtoehtoa antaa jaolle joustovaraa. Jos kaikki toiveet ovat samoilla viikoilla, ne eivät paranna mahdollisuuksia.</p></details>
+      <details><summary>Saako ehdotuksen laskea uudelleen?</summary><p>Saa. Toinen vaihtoehto -painike arpoo tasatilanteet uudelleen. Laskenta noudattaa aina samoja sääntöjä.</p></details></div>`)}
+    ${sec('h-tiedot', 'shield', 'Tiedot ja tietosuoja', `<p>Tiedot ovat vain tämän selaimen muistissa. Ne eivät lähde koneelta, eikä palvelussa ole kirjautumista. Ota varmuuskopio Tiedot-valikosta, varsinkin ennen selaimen tietojen tyhjentämistä.</p>
+      <p style="margin:0">Kirjaa vain se, mitä lomien jakoon tarvitaan: nimi, rooli ja toiveet. <b>Älä kirjoita lisätietoihin terveystietoja</b> tai muita arkaluonteisia tietoja.</p>`)}
+    </div>
+  </div>`;
+}
+
+/* =========================================================================
+   Tulosteet: pelisäännöt ja toivelomake, seinälista, lomailmoitukset
+   Tulostetaan piilotetun kehyksen kautta, jolloin sivun oma ulkoasu ei häiritse.
+   ========================================================================= */
+const PRINT_CSS = `body{font:11.5pt/1.45 "Segoe UI",system-ui,Arial,sans-serif;color:#000;margin:0}
+h1{font-size:19pt;margin:0 0 3mm}h2{font-size:13pt;margin:5mm 0 1.5mm}p{margin:0 0 2.5mm}ul{margin:0 0 2.5mm;padding-left:6mm}li{margin-bottom:1.2mm}
+.muted{color:#555}table{border-collapse:collapse;width:100%}th,td{border:1px solid #aaa;padding:1.4mm 2mm;text-align:left;font-size:10pt;vertical-align:top}
+.grid th,.grid td{padding:0;text-align:center;font-size:7.5pt;height:5.5mm}.grid th small{display:block;font-weight:400}
+.grid td.on{background:#2f6fd6;-webkit-print-color-adjust:exact;print-color-adjust:exact}.grid td.n{text-align:left;padding:0 2mm;white-space:nowrap;font-size:9pt}
+.page{page-break-after:always}.page:last-child{page-break-after:auto}
+.field{display:flex;gap:3mm;align-items:flex-end;margin-bottom:3.5mm}.field b{white-space:nowrap;font-weight:600}.field .line{flex:1;border-bottom:1px solid #000;height:8mm}
+.lines .line{border-bottom:1px solid #000;height:8mm}
+.slip{border:1px dashed #888;padding:5mm 6mm;margin-bottom:5mm;page-break-inside:avoid}.slip h2{margin-top:0}`;
+function printDoc(title, body, landscape){
+  const f = document.createElement('iframe');
+  f.style.cssText = 'position:fixed;right:0;bottom:0;width:0;height:0;border:0';
+  document.body.appendChild(f);
+  const d = f.contentDocument;
+  d.open();
+  d.write(`<!doctype html><html lang="fi"><head><meta charset="utf-8"><title>${esc(title)}</title><style>${PRINT_CSS}@page{size:A4${landscape ? ' landscape' : ''};margin:${landscape ? 10 : 15}mm}</style></head><body>${body}</body></html>`);
+  d.close();
+  setTimeout(() => { f.contentWindow.focus(); f.contentWindow.print(); setTimeout(() => f.remove(), 2000); }, 150);
+}
+const unitTitle = () => `Kesälomat ${state.year}${state.unit ? ', ' + esc(state.unit) : ''}`;
+const deadlineText = () => state.deadline ? dmy(new Date(state.deadline + 'T00:00')) : '___.___.______';
+
+function printRules(){
+  const exc = Object.entries(state.weekMax).filter(([w]) => +w >= state.ss && +w <= state.se)
+    .map(([w, n]) => `viikolla ${w} (${dm(weekMonday(state.year, +w))}–${dm(weekEnd(state.year, +w))}) enintään ${n}`);
+  const roles = state.roles.filter(r => r.max < state.defMax).map(r => `${esc(r.name.toLowerCase())} ${r.max}`);
+  const cw = closedWeeks(), closedDates = cw.length ? `${dmy(weekMonday(state.year, cw[0]))}–${dmy(weekEnd(state.year, cw[cw.length - 1]))}` : '';
+  const wishBlock = k => `<h2>${k}. toive</h2>
+    <div class="field"><b>${cw.length ? 'Loppuosa lomasta' : 'Loma'}</b><div class="line"></div><b>–</b><div class="line"></div></div>
+    ${cw.length ? '' : '<div class="field"><b>2. osa, jos haluat pitää loman kahdessa osassa</b><div class="line"></div><b>–</b><div class="line"></div></div>'}`;
+  printDoc('Pelisäännöt ja toivelomake', `
+  <div class="page">
+    <h1>${unitTitle()}: näin lomat jaetaan</h1>
+    <p>Tavoitteena on, että mahdollisimman moni saa toivomansa loman ja että hyvät lomaviikot vuorottelevat reilusti vuodesta toiseen.</p>
+    ${cw.length ? `<p><b>Yhteinen sulku ${closedDates}.</b> ${state.unit ? esc(state.unit) : 'Yksikkö'} on silloin kiinni, ja kaikki ovat lomalla. Sulku lasketaan osaksi kesälomaasi. Toivo alla vain loput lomastasi.</p>` : ''}
+    <h2>1. Anna kolme toivetta</h2>
+    <ul><li>Kirjoita kolme vaihtoehtoista ${cw.length ? 'ajankohtaa loman loppuosalle' : 'lomaa'} tärkeysjärjestyksessä päivämäärinä, esimerkiksi ${cw.length ? '2.8.–8.8.' : '5.7.–1.8.'}</li>
+    ${cw.length ? '' : `<li>Voit pitää loman yhtenä tai kahdessa osassa, esimerkiksi 28.6.–18.7. ja 30.8.–5.9. Pidemmän osan on oltava vähintään ${state.minMain} viikkoa.</li>`}
+    <li>Anna kolme erilaista toivetta. Jos kaikki toiveet ovat samoilla viikoilla, ne eivät paranna mahdollisuuksiasi.</li>
+    <li>Palauta toiveet viimeistään <b>${deadlineText()}</b>.</li></ul>
+    <h2>2. Mitä otetaan huomioon</h2>
+    <ul><li>Lomakausi on ${dmy(weekMonday(state.year, state.ss))}–${dmy(weekEnd(state.year, state.se))}.</li>
+    <li>Samaan aikaan lomalla voi olla enintään ${state.defMax} henkilöä${exc.length ? `, paitsi ${exc.join(', ')}` : ''}.</li>
+    ${roles.length ? `<li>Jotta jokaista osaamista jää paikalle, lomalla voi olla samaan aikaan roolista riippuen enintään: ${roles.join(', ')}.</li>` : ''}
+    <li>Jo sovitut lomat pysyvät ennallaan.</li></ul>
+    <h2>3. Miten jako tehdään</h2>
+    <ul><li>Jokainen saa vuorollaan parhaan toiveensa, joka vielä mahtuu.</li>
+    ${state.comp ? '<li>Vuorojärjestys perustuu etusijaan. Jos et ole aiempina vuosina saanut 1. toivettasi, olet tänä vuonna etusijalla.</li>' : ''}
+    <li>Jos usealla on sama etusija, järjestys arvotaan.</li>
+    <li>Jos mikään toive ei mahdu, saat lähimmän vapaan jakson 1. toiveestasi.</li>
+    <li>Jokainen saa tiedon lomastaan ja perustelun: mitä sai ja miksi.</li></ul>
+    ${state.comp ? `<h2>4. Vuorottelu vuodesta toiseen</h2>
+    <p>Jos et saa 1. toivettasi, saat ensi vuonna etusijaa. Mitä kauempana toiveestasi lomasi oli, sitä enemmän etusijaa. Edellinen vuosi vaikuttaa eniten, sitä aiemmat vähemmän.</p>` : ''}
+    <p class="muted" style="margin-top:6mm">Lopullisen päätöksen lomista tekee esihenkilö vuosilomalain mukaisesti. Kysy rohkeasti, jos jokin on epäselvää.</p>
+  </div>
+  <div class="page">
+    <h1>Lomatoiveet, kesä ${state.year}</h1>
+    <p>${state.unit ? esc(state.unit) + '. ' : ''}Palauta viimeistään <b>${deadlineText()}</b>.${cw.length ? ` Yhteinen sulku ${closedDates} on kaikille lomaa, joten kirjoita alle vain loput lomastasi.` : ''}</p>
+    <div class="field" style="margin-top:6mm"><b>Nimi</b><div class="line"></div></div>
+    ${wishBlock(1)}${wishBlock(2)}${wishBlock(3)}
+    <h2>Lisätietoja</h2><div class="lines"><div class="line"></div><div class="line"></div></div>
+  </div>`);
+}
+function printWall(){
+  const A = state.result.A, W = seasonWeeks();
+  const ps = [...state.people].filter(p => A[p.id]).sort((a, b) => a.name.localeCompare(b.name, 'fi'));
+  const rows = ps.map(p => { const on = new Set([...(A[p.id].s ? planWeeks(A[p.id].s) : []), ...closedWeeks()]); return `<tr><td class="n">${esc(p.name)}</td>${W.map(w => `<td class="${on.has(w) ? 'on' : ''}"></td>`).join('')}</tr>`; }).join('');
+  // Aikajärjestys loman ensimmäisen viikon mukaan (sulku mukaan lukien)
+  const firstWeek = p => Math.min(...(A[p.id].s || []).map(([s]) => s), ...closedWeeks(), 99);
+  const list = [...ps].sort((a, b) => firstWeek(a) - firstWeek(b))
+    .map(p => `<tr><td>${esc(p.name)}</td><td>${A[p.id].s ? datesOf(p, A[p.id].s) : 'sovitaan erikseen'}</td></tr>`).join('');
+  printDoc('Seinälista', `
+    <div class="page"><h1>${unitTitle()}</h1>
+    <table class="grid"><thead><tr><th class="n">Viikko</th>${W.map(w => `<th>${w}<small>${dm(weekMonday(state.year, w))}</small></th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>
+    <div class="page"><h1>${unitTitle()}: lomat aikajärjestyksessä</h1><table><thead><tr><th>Nimi</th><th>Loma</th></tr></thead><tbody>${list}</tbody></table></div>`, true);
+}
+function printSlips(){
+  const A = state.result.A, c = occFrom(A);
+  const slips = [...state.people].filter(p => A[p.id]).sort((a, b) => a.name.localeCompare(b.name, 'fi')).map(p => `
+    <div class="slip"><h2>${esc(p.name)}</h2>
+    <p>Kesälomasi ${state.year}: <b>${A[p.id].s ? datesOf(p, A[p.id].s) : 'sovitaan erikseen'}</b>${A[p.id].s && !exactDates(p, A[p.id].s) ? ` (${p.len} vk)` : ''}</p>
+    <p>${esc(messageFor(c, p, A))}</p>
+    <p class="muted">${state.unit ? esc(state.unit) + ', ' : ''}${dmy(new Date())}</p></div>`).join('');
+  printDoc('Lomailmoitukset', slips);
+}
+
+/* =========================================================================
+   Esimerkkiaineisto
+   ========================================================================= */
+function genNames(n, rnd){
+  const set = new Set(), out = []; let guard = 0;
+  while (out.length < n && guard++ < 20000){ const nm = FIRST[Math.floor(rnd() * FIRST.length)] + ' ' + LAST[Math.floor(rnd() * LAST.length)]; if (!set.has(nm)){ set.add(nm); out.push(nm); } }
+  return out;
+}
+function demoState(){
+  const rnd = mulberry32(randSeed()), st = defaultState();
+  st.year = 2027; st.defMax = 4; st.weekMax = {25:3};
+  const sh = {id:uid('r'), name:'Sairaanhoitaja', max:2}, lh = {id:uid('r'), name:'Lähihoitaja', max:3};
+  st.roles = [sh, lh];
+  const pick = arr => arr[Math.floor(rnd() * arr.length)];
+  st.people = genNames(16, rnd).map((name, i) => {
+    // Useimmilla 4 vk (24 arkipäivää), lyhyemmässä työsuhteessa 3 vk. Toiveen muoto vaihtelee: yhtenä, 3 + 1 tai 2 + 2.
+    const len = rnd() < 0.15 ? 3 : 4;
+    const mk = start => {
+      const x = rnd(), sp = len === 3 ? (x < 0.7 ? 0 : 2) : x < 0.45 ? 0 : x < 0.85 ? 3 : 2;
+      const main = sp || len, rest = len - main, a = clamp(start, st.ss, st.se - main + 1);
+      if (!rest) return {sp:0, s:[a]};
+      for (let g = 0; g < 50; g++){ const b = pick([21,22,23,24,33,34,35,36,37]); if (b + rest <= a || b >= a + main) return {sp, s:[a, b]}; }
+      return {sp:0, s:[clamp(a, st.ss, st.se - len + 1)]};
+    };
+    // Heinäkuu on suosituin, mutta toiveet hajautuvat kuten oikeassa yksikössä
+    const w1 = pick([22,23,24,25,26,27,27,28,28,29,30,31,32,33]);
+    let w2 = w1 + (rnd() < 0.5 ? -1 : 1) * (2 + Math.floor(rnd() * 4)); if (w2 === w1) w2 = w1 - 1;
+    let w3 = 20 + Math.floor(rnd() * 17); while (w3 === w1 || w3 === w2) w3 = w3 > 21 ? w3 - 1 : w3 + 3;
+    return {id:uid('p'), name, role: i < 5 ? sh.id : lh.id, len, wishes:[mk(w1), mk(w2), mk(w3)]};
+  });
+  const lvl = () => { const x = rnd(); return x < 0.5 ? 1 : x < 0.75 ? 2 : x < 0.9 ? 3 : 4; };
+  st.history = [1, 2].map(a => ({year:st.year - a, rows:st.people.map(p => ({name:p.name, level:lvl()}))}));
+  return st;
+}
+
+/* =========================================================================
+   Tapahtumat
+   ========================================================================= */
+const findP = id => state.people.find(p => p.id === id);
+const findR = id => state.roles.find(r => r.id === id);
+// Pituuden tai sallittujen jakojen muuttuessa: virheellinen jako muuttuu yhtenäiseksi, alkuviikot pysyvät kauden sisällä
+function fixShapes(p){
+  const so = splitOptions(freeLen(p));
+  p.wishes = p.wishes.map(w => {
+    if (!w) return null;
+    const sp = so.includes(w.sp) ? w.sp : 0;
+    const s = segLens(p, sp).map((l, i) => Number.isInteger(w.s[i]) ? clamp(w.s[i], state.ss, state.se - l + 1) : null);
+    // Omat päivämäärät (d) säilyvät vain, jos toive ei muuttunut
+    return w.d && sp === w.sp && s.length === w.s.length && s.every((x, i) => x === w.s[i]) ? {sp, s, d:w.d} : {sp, s};
+  });
+}
+function addPerson(){
+  const p = {id:uid('p'), name:'', role:state.roles[0]?.id || '', len:4, wishes:[]};
+  state.people.push(p); selId = p.id; focusName = true;
+}
+// Toivekalenterin esikatselu: näytä jakso, joka valittaisiin klikkaamalla
+document.addEventListener('mouseover', e => {
+  $$('.wgrid td.pv').forEach(x => x.classList.remove('pv'));
+  const td = e.target.closest('.wgrid td.cell'); if (!td || !td.dataset.act || td.classList.contains('on')) return;
+  const len = +td.dataset.len, s = clamp(+td.dataset.w, state.ss, state.se - len + 1);
+  td.parentElement.querySelectorAll('td.cell').forEach(c => { const w = +c.dataset.w; if (w >= s && w < s + len) c.classList.add('pv'); });
+});
+document.addEventListener('change', async e => {
+  const t = e.target, f = t.dataset.f;
+  if (t.id === 'yearIn'){ state.year = clamp(+t.value || state.year, 2000, 2100); save(); render(); return; }
+  if (t.id === 'fileBackup'){
+    try { state = normalizeState(JSON.parse(await readFileText(t.files[0]))); save(); render(); toast('Varmuuskopio tuotu'); }
+    catch { toast('Tiedostoa ei voitu lukea'); }
+    t.value = ''; $('#fileMenu').open = false; return;
+  }
+  if (!f) return;
+  const v = t.type === 'checkbox' ? t.checked : t.value;
+  switch (f){
+    case 'ss': state.ss = +v; if (state.se < state.ss) state.se = state.ss; break;
+    case 'se': state.se = +v; if (state.ss > state.se) state.ss = state.se; break;
+    case 'defMax': state.defMax = clamp(+v || 1, 1, 99); break;
+    case 'comp': state.comp = v; break;
+    case 'wk': { const w = +t.dataset.w, n = clamp(+v || 0, 0, 99); if (n === state.defMax) delete state.weekMax[w]; else state.weekMax[w] = n; break; }
+    case 'roleName': findR(t.dataset.id).name = v.trim() || 'Rooli'; break;
+    case 'roleMax': findR(t.dataset.id).max = clamp(+v || 0, 0, 99); break;
+    case 'pName': {
+      // Ei uudelleenpiirtoa: muuten samaan aikaan klikattu listan kortti katoaisi alta
+      findP(t.dataset.id).name = v.trim(); save();
+      const nb = $(`.pcard[data-id="${t.dataset.id}"] b`); if (nb) nb.textContent = v.trim() || 'Nimetön';
+      return;
+    }
+    case 'minMain': state.minMain = +v; state.people.forEach(fixShapes); break;
+    case 'pNote': {
+      // Ei uudelleenpiirtoa, sama syy kuin nimellä
+      findP(t.dataset.id).note = v.trim(); save(); return;
+    }
+    case 'cf': state.cf = +v; state.ct = state.cf ? Math.max(state.ct || state.cf, state.cf) : 0; state.people.forEach(fixShapes); break;
+    case 'ct': state.ct = Math.max(+v, state.cf); state.people.forEach(fixShapes); break;
+    case 'unit': state.unit = v.trim(); save(); return;
+    case 'deadline': state.deadline = v; save(); return;
+    case 'swapWith': {
+      // Kahden henkilön lomat vaihdetaan keskenään ja molemmat lukitaan
+      const p = findP(resSel), q = findP(v), A = state.result.A;
+      if (!p || !q) return;
+      const pa = A[p.id].s, qa = A[q.id].s;
+      applyManual(p, qa); applyManual(q, pa);
+      toast(`${p.name} ja ${q.name} vaihtoivat lomat`); break;
+    }
+  }
+  save(); render();
+});
+document.addEventListener('input', e => {
+  if (e.target.id !== 'pSearch') return;
+  pSearch = e.target.value; const q = norm(pSearch);
+  $$('.pcard').forEach(c => c.hidden = !!q && !c.dataset.name.includes(q));
+});
+document.addEventListener('click', async e => {
+  // Avoimet valikot sulkeutuvat, kun klikataan muualle tai valitaan toiminto
+  const menu = e.target.closest('details.menu');
+  $$('details.menu[open]').forEach(d => { if (d !== menu || e.target.closest('.menu-pop button')) d.open = false; });
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const act = b.dataset.act;
+  if (b.tagName === 'A') e.preventDefault();
+  switch (act){
+    case 'tab': showTab(b.dataset.tab); return;
+    case 'theme': theme = effectiveTheme() === 'dark' ? 'light' : 'dark'; try { localStorage.setItem(THEME_KEY, theme); } catch {} applyTheme(); return;
+    case 'startOwn': heroHidden = true; showTab('settings'); return;
+    case 'bump': {
+      const inp = b.parentElement.querySelector('input');
+      inp.value = (+inp.value || 0) + +b.dataset.d;
+      inp.dispatchEvent(new Event('change', {bubbles:true})); return;
+    }
+    case 'demo':
+      if (state.people.length && !(await ask('Korvataanko nykyiset tiedot esimerkkiaineistolla?', 'Korvaa', true))) return;
+      state = demoState(); save(); showTab('people'); toast('Esimerkkiaineisto ladattu: hoivayksikkö, 16 henkilöä'); return;
+    case 'backup': download(`lomajako-${state.year}-varmuuskopio.json`, JSON.stringify(state, null, 1), 'application/json'); return;
+    case 'reset': if (await ask('Poistetaanko kaikki tiedot tästä selaimesta? Tätä ei voi perua. Ota tarvittaessa ensin varmuuskopio.', 'Poista kaikki', true)){ state = defaultState(); save(); showTab('settings'); } return;
+    case 'addRole': state.roles.push({id:uid('r'), name:'Uusi rooli', max:state.defMax}); break;
+    case 'delRole': state.roles = state.roles.filter(r => r.id !== b.dataset.id); state.people.forEach(p => { if (p.role === b.dataset.id) p.role = ''; }); break;
+    case 'addPerson': addPerson(); break;
+    case 'delPerson': {
+      const i = state.people.findIndex(p => p.id === b.dataset.id);
+      if (!(await ask(`Poistetaanko ${state.people[i].name || 'nimetön henkilö'}?`, 'Poista', true))) return;
+      state.people.splice(i, 1); selId = state.people[Math.min(i, state.people.length - 1)]?.id || null; break;
+    }
+    case 'selP': selId = b.dataset.id; renderPeople(); return;
+    case 'navP': {
+      const i = state.people.findIndex(p => p.id === selId) + +b.dataset.d;
+      if (i >= state.people.length) addPerson(); else if (i >= 0) selId = state.people[i].id;
+      break;
+    }
+    case 'setRole': findP(selId).role = b.dataset.v; break;
+    case 'setLen': { const p = findP(selId); p.len = +b.dataset.v; fixShapes(p); break; }
+    case 'setWishSplit': {
+      // Muodon vaihtuessa alkuviikot säilyvät; yhtenäiseen jää vain pidemmän osan alku
+      const p = findP(selId), k = +b.dataset.k, sp = +b.dataset.v, cur = wishOf(p, k);
+      p.wishes[k] = {sp, s: segLens(p, sp).map((_, i) => cur.s[i] ?? null)}; fixShapes(p); break;
+    }
+    case 'wishCell': {
+      const p = findP(selId), k = +b.dataset.k, i = +b.dataset.i, w = +b.dataset.w, cur = wishOf(p, k);
+      const L = segLens(p, cur.sp), len = L[i], s = L.map((_, j) => cur.s[j] ?? null);
+      s[i] = s[i] != null && w >= s[i] && w < s[i] + len ? null : clamp(w, state.ss, state.se - len + 1);
+      if (s[i] != null) for (let x = s[i]; x < s[i] + len; x++) if (isClosed(x)){ toast(`Jakso osuisi sulkuviikoille (${closedLabel()})`); return; }
+      p.wishes[k] = s.every(x => x == null) && !cur.sp ? null : {sp: L.length === 2 ? L[0] : 0, s}; break;
+    }
+    case 'toggleImport': showImport = !showImport; renderPeople(); return;
+    case 'doImport': importPeople($('#impText').value); showImport = false; break;
+    case 'closeReport': importReport = null; renderPeople(); return;
+    case 'tplCsv': download(`lomatoiveet-${state.year}.csv`, templateCSV(), 'text/csv'); return;
+    case 'printRules': printRules(); return;
+    case 'printWall': printWall(); return;
+    case 'printSlips': printSlips(); return;
+    case 'lockWish': { const p = findP(selId), f = wl(p)[0]; if (f) p.fixed = f.map(x => [...x]); break; }
+    case 'unlockP': delete findP(selId).fixed; break;
+    case 'resSel': resSel = b.dataset.id || null; renderResult(); if (resSel) $('.personpanel')?.scrollIntoView({behavior:'smooth', block:'start'}); return;
+    case 'movePlan': { const p = findP(resSel); applyManual(p, wl(p)[+b.dataset.k]); break; }
+    case 'moveTo': {
+      const p = findP(resSel), a = state.result.A[p.id], w = +b.dataset.w;
+      let plan;
+      if (!freeLen(p)) return;
+      if (!a.s?.length) plan = [[clamp(w, state.ss, state.se - freeLen(p) + 1), freeLen(p)]];
+      else {
+        // Siirretään klikkausta lähempi osa, muoto säilyy
+        plan = a.s.map(x => [...x]);
+        const i = plan.length < 2 ? 0 : Math.abs(w - (plan[0][0] + plan[0][1] / 2)) <= Math.abs(w - (plan[1][0] + plan[1][1] / 2)) ? 0 : 1;
+        plan[i][0] = clamp(w, state.ss, state.se - plan[i][1] + 1);
+        if (!validSegs(plan)){ toast('Loman osat menisivät päällekkäin'); return; }
+      }
+      applyManual(p, plan); break;
+    }
+    case 'lockRes': { const p = findP(resSel); applyManual(p, state.result.A[p.id].s); break; }
+    // Lukitus koskee vain seuraavaa laskentaa; nykyinen tulos (ja sen perustelu) säilyy
+    case 'unlockRes': { delete findP(resSel).fixed; state.result.key = inputsKey(); break; }
+    case 'copyMsg': {
+      const p = findP(b.dataset.id), A = state.result.A, a = A[p.id];
+      const text = `Hei ${p.name.split(' ')[0]}! Kesälomasi ${state.year}: ${a.s ? datesOf(p, a.s) : 'sovitaan erikseen'}. ${messageFor(occFrom(A), p, A)}`;
+      try { await navigator.clipboard.writeText(text); }
+      catch { const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+      toast('Viesti kopioitu'); return;
+    }
+    case 'reroll': state.seed = randSeed(); // jatkuu laskentaan
+    case 'run': {
+      b.disabled = true; b.innerHTML = I('clock') + ' Lasketaan…'; await tick();
+      const best = solve(state.seed);
+      state.result = {A:best.A, order:best.order, seed:state.seed, key:inputsKey(), at:new Date().toLocaleString('fi-FI')};
+      if (currentTab !== 'result'){ save(); showTab('result'); toast('Lomajako laskettu'); return; }
+      toast('Lomajako laskettu');
+      break;
+    }
+    case 'csv': {
+      const A = state.result.A, c = occFrom(A);
+      const lines = ['Nimi;Rooli;Lomajaksot;Tulos;Perustelu'];
+      for (const p of state.people){ const a = A[p.id]; if (!a) continue;
+        const jaksot = a.s ? datesOf(p, a.s) : '';
+        lines.push([p.name, roleName(p.role), jaksot, LEVEL_LABEL[a.lv], explain(c, p, A)].map(x => `"${String(x).replace(/"/g, '""')}"`).join(';')); }
+      download(`lomajako-${state.year}.csv`, '﻿' + lines.join('\r\n'), 'text/csv'); return;
+    }
+    case 'saveHist': {
+      if (state.history.some(h => h.year === state.year) && !(await ask(`Vuodelle ${state.year} on jo tallennettu jako. Korvataanko?`, 'Korvaa'))) return;
+      const A = state.result.A;
+      state.history = state.history.filter(h => h.year !== state.year);
+      state.history.push({year:state.year, rows:state.people.filter(p => A[p.id]).map(p => ({name:p.name, level:A[p.id].lv}))});
+      toast(`Jako ${state.year} tallennettu historiaan`); break;
+    }
+    case 'delHist': if (!(await ask(`Poistetaanko vuoden ${b.dataset.year} historia? Se vaikuttaa etusijoihin.`, 'Poista', true))) return; state.history = state.history.filter(h => h.year !== +b.dataset.year); break;
+  }
+  save(); render();
+});
+
+let startTab = 'settings';
+try { startTab = localStorage.getItem(TAB_KEY) || 'settings'; } catch {}
+applyTheme();
+matchMedia('(prefers-color-scheme: dark)').addEventListener?.('change', applyTheme);
+$('#saveStatus').innerHTML = I('shield') + ' Tiedot vain tällä koneella';
+showTab(state.people.length ? startTab : 'settings');
+</script>
+</body>
+</html>
